@@ -1,0 +1,5729 @@
+{
+  "Q-bnk-call-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-bnk-call-info",
+        "question_string": "What information verified with Bank?",
+        "responses": [
+          {
+            "id": "A-bnk-call-info",
+            "max_length": 100
+          }
+        ]
+      }
+    ]
+  },
+  "Q-bd-acc-rels-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-sop-rules-clos",
+        "question_string": "Rule out CR or follow SOP rules for Debt closure",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-sop-rules-clos-y",
+                "label": "Debt more than SOP",
+                "auto_annotation": "Debt more than SOP",
+                "followup_question_group_ids": [
+                  "Q-bd-acc-FUP"
+                ]
+              },
+              {
+                "id": "A-sop-rules-clos-n",
+                "label": "Debt less than SOP",
+                "auto_annotation": "Debt less than SOP"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-sa-ver-no-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-sa-ver-no",
+        "question_string": "Provide Google IV link of the address which did not yield results",
+        "responses": [
+          {
+            "id": "A-goog-link",
+            "max_length": 200
+          }
+        ]
+      }
+    ]
+  },
+  "Q-rc-wk-frd-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-rc-rfo",
+        "question_string": "Is there an RFO?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rc-rfo-y",
+                "label": "Yes",
+                "auto_annotation": "Yes"
+              },
+              {
+                "id": "A-rc-rfo-n",
+                "label": "No",
+                "auto_annotation": "No"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-uv-cuscall-no-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-uv-action-cui",
+        "question_string": "What is the action to be taken on CUI?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-uv-action-cui-pass",
+                "label": "Pass",
+                "auto_annotation": "Pass - UVCC"
+              },
+              {
+                "id": "A-uv-action-cui-frd",
+                "label": "Fraud",
+                "auto_annotation": "Fraud - UVCC",
+                "followup_question_group_ids": [
+                  "Q-act-cui-uvcc-frd-FUP"
+                ]
+              },
+              {
+                "id": "A-uv-action-cui-san",
+                "label": "VCAC",
+                "auto_annotation": "VCAC - UVCC"
+              },
+              {
+                "id": "A-uv-action-cui-cancel",
+                "label": "Cancel",
+                "auto_annotation": "Cancel - UVCC"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-Review-SME-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-Review-SME",
+        "responses": [
+          {
+            "id": "A-Review-SME-ma",
+            "max_length": 15
+          }
+        ]
+      }
+    ]
+  },
+  "Q-call-num-val-no-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-call-num-val-no-act",
+        "question_string": "Please Hold the account",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-call-num-val-no-act-yes",
+                "label": "OK",
+                "next_node_override": "node-add-obs"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-rc": {
+    "workflow_questions": [
+      {
+        "id": "Q-rc-rel",
+        "question_string": "How are the relations in RC? (Choose the most impactful relation)",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rc-rel-strong",
+                "label": "Strong relations ( Physical + Virtual Attributes)",
+                "auto_annotation": "Strong relations ( Physical + Virtual Attributes)",
+                "followup_question_group_ids": [
+                  "Q-rc-rel-strong-FUP"
+                ]
+              },
+              {
+                "id": "A-rc-rel-weak",
+                "label": "Weak relations (Only physical/Only virtual)",
+                "auto_annotation": "Weak relations (Only physical/Only virtual)",
+                "followup_question_group_ids": [
+                  "Q-rc-rel-weak-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-rc-rel-id",
+        "question_string": "Provide CID",
+        "responses": [
+          {
+            "id": "A-rc-rel-id",
+            "max_length": 20
+          }
+        ]
+      },
+      {
+        "id": "Q-rc-supprd-rels",
+        "question_string": "Are there any suppressed relations in RC?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rc-supprd-rels-yes",
+                "label": "Yes",
+                "auto_annotation": "Yes there are suppressed relations in RC",
+                "followup_question_group_ids": [
+                  "Q-rc-supprd-rels-yes-FUP"
+                ]
+              },
+              {
+                "id": "A-rc-supprd-rels-no",
+                "label": "No",
+                "auto_annotation": "No, there are not suppressed relations in RC"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-gsi": {
+    "workflow_questions": [
+      {
+        "id": "Q-gsi-oip",
+        "question_string": "Is the OIP captured as per order date?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-gsi-oip-yes",
+                "label": "Yes",
+                "auto_annotation": "OIP Captured in GSI",
+                "followup_question_group_ids": [
+                  "Q-gsi-oip-yes-FUP"
+                ]
+              },
+              {
+                "id": "A-gsi-oip-no",
+                "label": "No",
+                "auto_annotation": "OIP is not captured in GSI",
+                "followup_question_group_ids": [
+                  "Q-gsi-oip-no-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-tz-ip-gsi-chk",
+        "question_string": "Is there a time zone/ IP country change in OIP or GSI that does not match the  origin marketplace of CUI?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "a-tz-ip-gsi-chk-yes",
+                "label": "yes",
+                "auto_annotation": "TZ/IP country change in OIP/GSI",
+                "followup_question_group_ids": [
+                  "q-tz-ip-gsi-chk-yes-FUP"
+                ]
+              },
+              {
+                "id": "a-tz-ip-gsi-chk-no",
+                "label": "No",
+                "auto_annotation": "No TZ/IP country change in OIP/GSI"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-gsi-rels",
+        "question_string": "How are rels in GSI",
+        "tooltip": {
+          "tooltip_string": "\"Increased risk : Relevant neg rels with signins \\nReduced risk : Irrelevant neg rels with signins / Clean GSI\"",
+          "tooltip_url": "https://tiny.amazon.com/tbxbw9y9/GSI"
+        },
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-gsi-rels-cln",
+                "label": "Clean GSI",
+                "auto_annotation": "Clean GSI",
+                "summary_class": "gwf-pos-green"
+              },
+              {
+                "id": "A-gsi-rels-blk",
+                "label": "Blank OIP",
+                "auto_annotation": "Blank OIP"
+              },
+              {
+                "id": "A-gsi-rels-int",
+                "label": "Internal signins",
+                "auto_annotation": "Internal signins"
+              },
+              {
+                "id": "A-gsi-rels-imp",
+                "label": "Impactful fraud/sanitize relations",
+                "auto_annotation": "Impactful fraud/sanitize relations",
+                "followup_question_group_ids": [
+                  "Q-gsi-rels-imp-FUP"
+                ]
+              },
+              {
+                "id": "A-gsi-rels-non-imp",
+                "label": "Non-impactful sanitize/fraud relations",
+                "auto_annotation": "Non-impactful sanitize/fraud relations"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-iv": {
+    "workflow_questions": [
+      {
+        "id": "Q-iv-validation",
+        "question_string": "External IV validate which of the following?",
+        "tooltip": {
+          "tooltip_string": "\"IV Tools - Google/Linkdin/PIPL/White pages doesn’t work for DE/Klicktel/ Das Telefonbuch for DE/Herold for AT \\nIncreased risk : External IV-no results found \\nReduced risk : IV validated email/diff names on account/business/employment/address\"",
+          "tooltip_url": "https://tiny.amazon.com/1ee6izpgh/IV"
+        },
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-iv-validation-na",
+                "label": "External IV - Not applicable",
+                "auto_annotation": "External IV - Not applicable"
+              },
+              {
+                "id": "A-iv-validation-no-result",
+                "label": "No results found",
+                "auto_annotation": "External IV-no results found",
+                "summary_class": "gwf-neg-red"
+              },
+              {
+                "id": "A-iv-validation-em",
+                "label": "Email",
+                "auto_annotation": "IV validated email",
+                "followup_question_group_ids": [
+                  "Q-iv-FUP"
+                ],
+                "summary_class": "gwf-pos-green"
+              },
+              {
+                "id": "A-iv-validation-diff-nms",
+                "label": "Different names on account",
+                "auto_annotation": "IV validated different names on account",
+                "followup_question_group_ids": [
+                  "Q-iv-FUP"
+                ],
+                "summary_class": "gwf-pos-green"
+              },
+              {
+                "id": "A-iv-validation-bizz-emp",
+                "label": "Business/Employment",
+                "auto_annotation": "IV validated Business/Employment",
+                "followup_question_group_ids": [
+                  "Q-iv-FUP"
+                ],
+                "summary_class": "gwf-pos-green"
+              },
+              {
+                "id": "A-iv-validation-addr",
+                "label": "Address",
+                "auto_annotation": "IV validated address",
+                "followup_question_group_ids": [
+                  "Q-iv-FUP"
+                ],
+                "summary_class": "gwf-pos-green"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-bd-acc-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-bd-acc-not-clrd",
+        "question_string": "Take enforcement action and send corresponding blurb",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-bd-acc-not-clrd",
+                "label": "ok",
+                "auto_annotation": "BD not cleared on acc",
+                "next_node_override": "node-man-anno"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-pmt": {
+    "workflow_questions": [
+      {
+        "id": "Q-pmt-mthd",
+        "question_string": "What is the payment method?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-pmt-cc",
+                "label": "Credit Card",
+                "auto_annotation": "Credit Card payment",
+                "followup_question_group_ids": [
+                  "Q-pmt-card-new-n-fup",
+                  "Q-pmt-creditcard-fup",
+                  "Q-pay-ver-fup"
+                ]
+              },
+              {
+                "id": "A-pmt-dd",
+                "label": "Echeck/DD",
+                "auto_annotation": "Echeck payment",
+                "followup_question_group_ids": [
+                  "Q-cc-dd-FUP",
+                  "Q-pmt-mthd-FUP",
+                  "Q-pay-ver-fup"
+                ]
+              },
+              {
+                "id": "A-pmt-gc",
+                "label": "Gift Card",
+                "auto_annotation": "Gift Card payment"
+              },
+              {
+                "id": "A-pmt-ps",
+                "label": "Pay Station",
+                "auto_annotation": "Pay Station payment"
+              },
+              {
+                "id": "A-pmt-poa",
+                "label": "POA",
+                "auto_annotation": "POA"
+              },
+              {
+                "id": "A-pmt-mi",
+                "label": "Monthly Invoicing",
+                "auto_annotation": "Monthly Invoicing"
+              },
+              {
+                "id": "A-pmt-p24",
+                "label": "Przelewy24 (p24)",
+                "auto_annotation": "Przelewy24 (p24)"
+              },
+              {
+                "id": "A-pmt-idl",
+                "label": "iDeal (NL,DE)",
+                "auto_annotation": "iDeal (NL,DE)"
+              },
+              {
+                "id": "A-pmt-po-co",
+                "label": "points/coins",
+                "auto_annotation": "points/coins"
+              },
+              {
+                "id": "A-pmt-amz-pts",
+                "label": "Amazon Points",
+                "auto_annotation": "Amazon Points"
+              },
+              {
+                "id": "A-pmt-inv",
+                "label": "Paid Invoicing",
+                "auto_annotation": "Paid Invoicing"
+              },
+              {
+                "id": "A-pmt-ban",
+                "label": "Bancontact",
+                "auto_annotation": "Bancontact"
+              }
+            ]
+          }
+        ],
+        "answer_eval_attributes": {
+          "rule_set_name": "Q-pmt-mthd",
+          "schema_name": "GuidedWorkflowBRI"
+        }
+      },
+      {
+        "id": "Q-scd-pmt",
+        "question_string": "Has any other payment method been used?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-scd-pmt-na",
+                "label": "NA",
+                "auto_annotation": "NA"
+              },
+              {
+                "id": "A-scd-pmt-gc",
+                "label": "Gift card",
+                "auto_annotation": "Gift card"
+              },
+              {
+                "id": "A-scd-pmt-rwd-pts",
+                "label": "Reward Points",
+                "auto_annotation": "Reward Points"
+              },
+              {
+                "id": "A-scd-pmt-prm",
+                "label": "Promotions",
+                "auto_annotation": "Promotions"
+              },
+              {
+                "id": "A-scd-pmt-amz-cns",
+                "label": "Amazon Coins",
+                "auto_annotation": "Amazon Coins"
+              },
+              {
+                "id": "A-scd-pmt-pd",
+                "label": "Purchase Delegation",
+                "auto_annotation": "Purchase Delegation"
+              },
+              {
+                "id": "A-scd-pmt-inv-pm",
+                "label": "Invoice/pay monthly",
+                "auto_annotation": "Invoice/pay monthly"
+              }
+            ]
+          }
+        ],
+        "answer_eval_attributes": {
+          "rule_set_name": "Q-scd-pmt",
+          "schema_name": "GuidedWorkflowBRI"
+        }
+      }
+    ]
+  },
+  "Q-calls": {
+    "workflow_questions": [
+      {
+        "id": "Q-bnk-call",
+        "question_string": "Would you like to call Bank?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-bnk-call-yes",
+                "label": "Yes",
+                "auto_annotation": "Calling Bank",
+                "followup_question_group_ids": [
+                  "Q-bnk-call-yes-FUP",
+                  "Q-bnk-call-FUP"
+                ]
+              },
+              {
+                "id": "A-bnk-call-no",
+                "label": "No",
+                "auto_annotation": "Not calling Bank"
+              },
+              {
+                "id": "A-bnk-call-intl",
+                "label": "NA- Intl CC",
+                "auto_annotation": "Cannot call bank - international credit card"
+              },
+              {
+                "id": "A-bnk-call-no-access",
+                "label": "Unable to call bnk-no access (NH/VCC)",
+                "auto_annotation": "Unable to call bnk-no access (NH/VCC)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-uv-call",
+        "question_string": "Are you going to apply the Unverified Phone Call Process?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-uv-call-yes",
+                "label": "Yes",
+                "auto_annotation": "Applying UVCC",
+                "followup_question_group_ids": [
+                  "Q-uv-call-yes-FUP"
+                ]
+              },
+              {
+                "id": "A-uv-call-no",
+                "label": "No",
+                "auto_annotation": "Not applying UVCC",
+                "followup_question_group_ids": [
+                  "Q-uv-call-no-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-call-ans-no-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-call-ans-no-act",
+        "question_string": "Please Hold the account",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-call-ans-no-act-yes",
+                "label": "OK",
+                "next_node_override": "node-add-obs"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-pmt-card-new-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-pmt-card-chk",
+        "question_string": "Please check if the card is old and readded from payment section",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-pmt-card-new-n",
+                "label": "No, not a readded card",
+                "auto_annotation": "No, not a readded card"
+              },
+              {
+                "id": "A-pmt-card-new-y",
+                "label": "Yes, old and readded card",
+                "auto_annotation": "Yes, readded card"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-set1-chk-one-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-itm-pmt",
+        "question_string": "Was this order paid in a single payment or installments?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-itm-pmt-ok",
+                "label": "OK",
+                "auto_annotation": "payOK"
+              },
+              {
+                "id": "A-itm-pmt-fail",
+                "label": "Fail",
+                "auto_annotation": "payX"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-pmt-nme",
+        "question_string": "Is this card under your name?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-pmt-nme-ok",
+                "label": "OK",
+                "auto_annotation": "ccnameOK"
+              },
+              {
+                "id": "A-pmt-nme-fail",
+                "label": "Fail",
+                "auto_annotation": "ccnameX"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-pmt-bnk",
+        "question_string": "Can you confirm the issuing bank of the CC?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-pmt-bnk-ok",
+                "label": "OK",
+                "auto_annotation": "issuerOK"
+              },
+              {
+                "id": "A-pmt-bnk-fail",
+                "label": "Fail",
+                "auto_annotation": "issuerX"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-set2-chk",
+        "question_string": "Questions answered incorrectly",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-set2-chk-1-mre",
+                "label": "1 or more",
+                "auto_annotation": "Fraud",
+                "followup_question_group_ids": [
+                  "Q-set2-chk-1-mre-fup"
+                ]
+              },
+              {
+                "id": "A-set2-chk-none",
+                "label": "None",
+                "auto_annotation": "PASS the orders",
+                "followup_question_group_ids": [
+                  "Q-set2-chk-none-fup"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-rc-strnrel-n-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-rc-cuscal",
+        "question_string": "Call the customer",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rc-cuscal-auth",
+                "label": "Customer authorized",
+                "auto_annotation": "Customer authorized"
+              },
+              {
+                "id": "A-rc-cuscal-unauth",
+                "label": "Customer unauthorized",
+                "auto_annotation": "Customer unauthorized"
+              },
+              {
+                "id": "A-rc-cuscal-ooch",
+                "label": "Customer out of calling zone",
+                "auto_annotation": "Customer out of calling zone"
+              },
+              {
+                "id": "A-rc-cuscal-na",
+                "label": "No answer",
+                "auto_annotation": "No answer"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-sell-stat-norm-n-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-sell-ato-n",
+        "question_string": "Is there an ATO in the seller account?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-sell-ato-n-y",
+                "label": "Yes",
+                "auto_annotation": "ATO in seller account",
+                "followup_question_group_ids": [
+                  "Q-sell-stat-n-FUP"
+                ]
+              },
+              {
+                "id": "A-sell-ato-n-n",
+                "label": "No",
+                "auto_annotation": "no ATO in seller account"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-corp-mo-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-corp-iv",
+        "question_string": "Please provide IV link",
+        "responses": [
+          {
+            "id": "A-corp-mo-link",
+            "max_length": 100
+          }
+        ]
+      }
+    ]
+  },
+  "Q-gsi-rels-imp-scn-it-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-gsi-rels-imp-scn-it-legit",
+        "question_string": "Is it a legit customer coming back?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-gsi-rels-imp-scn-it-legit-yes",
+                "label": "Yes",
+                "auto_annotation": "Yes is coming back"
+              },
+              {
+                "id": "A-gsi-rels-imp-scn-it-legit-no",
+                "label": "No",
+                "auto_annotation": "No is not coming back"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-uv-call-num-val-no-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-uv-call-num-val-no-act",
+        "question_string": "Please HOLD Account",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-uv-call-num-val-no-act-yes",
+                "label": "OK",
+                "auto_annotation": "OK",
+                "next_node_override": "node-summary"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-cross-org-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-cross-org-attr",
+        "question_string": "Which attributes from VC account matches with CUI",
+        "responses": [
+          {
+            "checkbox_options": [
+              {
+                "id": "A-cross-org-attr-gsi",
+                "label": "GSI Pattern",
+                "auto_annotation": "GSI Pattern matches with cui vc account"
+              },
+              {
+                "id": "A-cross-org-attr-ord",
+                "label": "Ordering Item Pattern",
+                "auto_annotation": "Order Item Pattern matches with cui vc account"
+              },
+              {
+                "id": "A-cross-org-attr-pmt",
+                "label": "Ordering Payment Pattern",
+                "auto_annotation": "Order Payment Pattern matches with cui vc account"
+              },
+              {
+                "id": "A-cross-org-attr-addr",
+                "label": "Ordering Address Pattern",
+                "auto_annotation": "Order Address Pattern matches with cui vc account"
+              },
+              {
+                "id": "A-cross-org-attr-no",
+                "label": "No Pattern match",
+                "auto_annotation": "No pattern match with cui vc account"
+              }
+            ],
+            "min_selected": 0,
+            "max_selected": 999
+          }
+        ]
+      },
+      {
+        "id": "Q-cross-org-ato",
+        "question_string": "Is there ATO in cross org VC account?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-cross-org-ato-yes",
+                "label": "Yes",
+                "auto_annotation": "Cross org vcac",
+                "followup_question_group_ids": [
+                  "Q-cross-org-ato-FUP"
+                ]
+              },
+              {
+                "id": "A-cross-org-ato-no",
+                "label": "No",
+                "auto_annotation": "No cross org vcac"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-rc-rel-strong-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-rc-strng",
+        "question_string": "What kind of impactful relation is it?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rc-imp-vc",
+                "label": "Strong VC relation",
+                "auto_annotation": "Strong VC relation",
+                "followup_question_group_ids": [
+                  "Q-rc-imp-vc-FUP"
+                ]
+              },
+              {
+                "id": "A-rc-imp-nc",
+                "label": "Strong NC relation",
+                "auto_annotation": "Strong NC relation",
+                "followup_question_group_ids": [
+                  "Q-rc-imp-nc-FUP"
+                ]
+              },
+              {
+                "id": "A-rc-imp-frd",
+                "label": "Strong fraud relations",
+                "auto_annotation": "Strong fraud relations",
+                "followup_question_group_ids": [
+                  "Q-rc-imp-frd-FUP"
+                ]
+              },
+              {
+                "id": "A-rc-imp-ab",
+                "label": "Strong abuse relations",
+                "auto_annotation": "Strong abuse relations"
+              },
+              {
+                "id": "A-rc-imp-cbbd",
+                "label": "Strong CB/BD relations",
+                "auto_annotation": "Strong CB/BD relations",
+                "followup_question_group_ids": [
+                  "Q-rc-imp-cbbd-FUP"
+                ]
+              },
+              {
+                "id": "A-rc-imp-san",
+                "label": "Strong sanit relations",
+                "auto_annotation": "Strong sanit relations",
+                "followup_question_group_ids": [
+                  "Q-rc-imp-san-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-cuscall-uvcc-no-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-act-cui-uvcc",
+        "question_string": "What is the action to be taken on CUI?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-act-cui-uvcc-pass",
+                "label": "Pass",
+                "auto_annotation": "Pass - UVCC"
+              },
+              {
+                "id": "A-act-cui-uvcc-frd",
+                "label": "Fraud",
+                "auto_annotation": "Fraud - UVCC",
+                "followup_question_group_ids": [
+                  "Q-act-cui-uvcc-frd-FUP"
+                ]
+              },
+              {
+                "id": "A-act-cui-uvcc-san",
+                "label": "VCAC",
+                "auto_annotation": "VCAC - UVCC"
+              },
+              {
+                "id": "A-act-cui-uvcc-cancel",
+                "label": "Cancel",
+                "auto_annotation": "Cancel - UVCC"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-sa-ps-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-sa-ps-loc",
+        "question_string": "Is the Pack Station/Locker Address nearby customer private or corporate address?",
+        "tooltip": {
+          "tooltip_string": "\"Increased Risk: Packstation-DHL/Hermes/Amazon Locker  Address is not nearby Customer Private or Corporate Address                            \\nReduced Risk:  Packstation-DHL/Hermes/Amazon Locker  Address is  nearby Customer Private or Corporate Address          \"",
+          "tooltip_url": "https://tiny.amazon.com/gbkdwcz8/NCinvestigation2"
+        },
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-sa-ps-loc-near",
+                "label": "Yes",
+                "auto_annotation": "Pack Station/Locker Address nearby customer private or corp address",
+                "summary_class": "gwf-pos-green"
+              },
+              {
+                "id": "A-sa-ps-loc-far",
+                "label": "No",
+                "auto_annotation": "Pack Station/Locker Address is not nearby customer private or corp address",
+                "summary_class": "gwf-neg-red"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-rc-imp-nc-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-rc-frdmo-ab",
+        "question_string": "Is there an abuse/fraud/legit MO observed?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rc-frdmo-ab",
+                "label": "Abuse",
+                "auto_annotation": "Abuse"
+              },
+              {
+                "id": "A-rc-frdmo-rfo",
+                "label": "RFO",
+                "auto_annotation": "RFO"
+              },
+              {
+                "id": "A-rc-frdmo-leg",
+                "label": "Legit MO",
+                "auto_annotation": "Legit MO"
+              },
+              {
+                "id": "A-rc-frdmo-no",
+                "label": "No MO",
+                "auto_annotation": "No MO"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-frd-tag-other-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-frd-tag-other",
+        "question_string": "Mention the fraud tag",
+        "responses": [
+          {
+            "id": "A-frd-tag",
+            "max_length": 50
+          }
+        ]
+      }
+    ]
+  },
+  "Q-call-rgt-prsn-ref-ans-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-call-rgt-prsn-ref-ans-act",
+        "question_string": "Please Hold the account",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-call-rgt-prsn-ref-ans-act-yes",
+                "label": "OK",
+                "next_node_override": "node-add-obs"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-MFO-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-seller-ato",
+        "question_string": "Is seller account compromised?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-seller-ato-yes",
+                "label": "Yes",
+                "auto_annotation": "Seller account compromised",
+                "followup_question_group_ids": [
+                  "Q-seller-ato-yes-FUP"
+                ],
+                "next_node_override": "node-man-anno"
+              },
+              {
+                "id": "A-seller-ato-no",
+                "label": "No",
+                "auto_annotation": "Seller account not compromised"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-tkn-rel-sta-lkd-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-rels-pm",
+        "question_string": "How many relations are noted with payment method?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rels-pm-one",
+                "label": "1",
+                "auto_annotation": "One relation with PM"
+              },
+              {
+                "id": "A-rels-pm-less-five",
+                "label": "Less than 5",
+                "auto_annotation": "Less than 5 rels with PM",
+                "followup_question_group_ids": [
+                  "Q-rels-pm-FUP"
+                ]
+              },
+              {
+                "id": "A-rels-pm-less-eight",
+                "label": "Less than 8",
+                "auto_annotation": "Less than 8 rels with PM",
+                "followup_question_group_ids": [
+                  "Q-rels-pm-FUP"
+                ]
+              },
+              {
+                "id": "A-rels-pm-more-eight",
+                "label": "Greater than 8",
+                "auto_annotation": "More than 8 rels with PM",
+                "followup_question_group_ids": [
+                  "Q-rels-pm-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-call-rgt-prsn-yes-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-full-nme",
+        "question_string": "Confirm full name on the account?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-full-nme-ok",
+                "label": "OK",
+                "auto_annotation": "nameOK"
+              },
+              {
+                "id": "A-full-nme-fail",
+                "label": "Fail",
+                "auto_annotation": "nameX"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-ord-lst-wk",
+        "question_string": "Confirm # order placed in last 7 days?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-ord-lst-wk-ok",
+                "label": "OK",
+                "auto_annotation": "ordersOK"
+              },
+              {
+                "id": "A-ord-lst-wk-fail",
+                "label": "Fail",
+                "auto_annotation": "ordersX"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-rct-itm",
+        "question_string": "Can you confirm an item from your most recent order?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rct-itm-ok",
+                "label": "OK",
+                "auto_annotation": "itemOK"
+              },
+              {
+                "id": "A-rct-itm-fail",
+                "label": "Fail",
+                "auto_annotation": "itemX"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-rct-itm-cc",
+        "question_string": "can you confirm the last 2 digits of CC used for this order?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rct-itm-cc-ok",
+                "label": "OK",
+                "auto_annotation": "last2OK"
+              },
+              {
+                "id": "A-rct-itm-cc-fail",
+                "label": "Fail",
+                "auto_annotation": "last2X"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-rct-itm-cc-use",
+        "question_string": "Have you used this CC in other Amazon account?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rct-itm-cc-use-ok",
+                "label": "OK",
+                "auto_annotation": "ccuseOK"
+              },
+              {
+                "id": "A-rct-itm-cc-use-fail",
+                "label": "Fail",
+                "auto_annotation": "ccuseX"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-set1-chk",
+        "question_string": "Questions answered incorrectly",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-set1-chk-one",
+                "label": "One",
+                "auto_annotation": "2nd set of questions",
+                "followup_question_group_ids": [
+                  "Q-set1-chk-one-FUP"
+                ]
+              },
+              {
+                "id": "A-set1-chk-2-mre",
+                "label": "2 or more",
+                "auto_annotation": "Fraud the account",
+                "followup_question_group_ids": [
+                  "Q-set1-chk-2-mre-FUP"
+                ]
+              },
+              {
+                "id": "A-set1-chk-none",
+                "label": "None",
+                "auto_annotation": "PASS the orders",
+                "followup_question_group_ids": [
+                  "Q-set1-chk-none-fup"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-act-cui-uvcc-frd-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-frd5-uvcc",
+        "question_string": "Select the Fraud scenario",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-frd5-uvcc-rfo",
+                "label": "RFO",
+                "auto_annotation": "RFO"
+              },
+              {
+                "id": "A-frd5-uvcc-lkdcc",
+                "label": "Leaked CC",
+                "auto_annotation": "Leaked CC"
+              },
+              {
+                "id": "A-frd5-uvcc-badgc",
+                "label": "Bad GC Source",
+                "auto_annotation": "Bad GC Source"
+              },
+              {
+                "id": "A-frd5-uvcc-slpmo",
+                "label": "Sleeper MO",
+                "auto_annotation": "Sleeper MO"
+              },
+              {
+                "id": "A-frd5-uvcc-idthft",
+                "label": "ID Theft MO",
+                "auto_annotation": "ID Theft MO"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-pmt-rh-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-pmt-ord-debt",
+        "question_string": "How is order to debt ratio?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-pmt-ord-debt-gud",
+                "label": "Good O/D Ratio",
+                "auto_annotation": "Good order to debt ratio",
+                "summary_class": "gwf-pos-green"
+              },
+              {
+                "id": "A-pmt-ord-debt-mod",
+                "label": "Mod O/D Ratio",
+                "auto_annotation": "Mod order to debt ratio"
+              },
+              {
+                "id": "A-pmt-ord-debt-bad",
+                "label": "Bad O/D Ratio",
+                "auto_annotation": "Bad order to debt ratio",
+                "summary_class": "gwf-neg-red"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-uv-set2-chk-none-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-uv-set2-chk-none-act",
+        "question_string": "Please PASS the order",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-uv-set2-chk-none-act",
+                "label": "OK",
+                "auto_annotation": "OK",
+                "next_node_override": "node-summary"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-uv-set1-chk-none-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-uv-set1-chk-none-act",
+        "question_string": "Please PASS the order",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-uv-set1-chk-none-act",
+                "label": "OK",
+                "auto_annotation": "OK",
+                "next_node_override": "node-summary"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-gsi-rels-sim-ptrn-other-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-gsi-rels-sim-ptrn-other",
+        "question_string": "Mention the legit MO pattern",
+        "responses": [
+          {
+            "id": "A-gsi-rels-sim-ptrn-other-explain",
+            "max_length": 100
+          }
+        ]
+      }
+    ]
+  },
+  "Q-gsi-rels-imp-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-gsi-rels-imp-attr",
+        "question_string": "Which of the following attributes match with fraud/sani rels?",
+        "responses": [
+          {
+            "checkbox_options": [
+              {
+                "id": "A-gsi-rels-imp-attr-em",
+                "label": "Email Pattern",
+                "auto_annotation": "Email Pattern"
+              },
+              {
+                "id": "A-gsi-rels-imp-attr-ord",
+                "label": "Ordering Pattern",
+                "auto_annotation": "Ordering Pattern"
+              },
+              {
+                "id": "A-gsi-rels-imp-attr-pmp",
+                "label": "Payment Pattern",
+                "auto_annotation": "Payment Pattern"
+              },
+              {
+                "id": "A-gsi-rels-imp-attr-addy",
+                "label": "Address Pattern",
+                "auto_annotation": "Address Pattern"
+              },
+              {
+                "id": "A-gsi-rels-imp-attr-si",
+                "label": "Signins pattern",
+                "auto_annotation": "Signins pattern"
+              },
+              {
+                "id": "A-gsi-rels-imp-attr-none",
+                "label": "None",
+                "auto_annotation": "None"
+              }
+            ],
+            "min_selected": 0,
+            "max_selected": 999
+          }
+        ]
+      },
+      {
+        "id": "Q-gsi-rels-imp-scn",
+        "question_string": "Do you see any of the following scenarios on the account?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-gsi-rels-imp-scn-it",
+                "label": "Customer coming for same item as in fraud rel",
+                "auto_annotation": "Customer coming for same item as in fraud rel",
+                "followup_question_group_ids": [
+                  "Q-gsi-rels-imp-scn-it-FUP"
+                ]
+              },
+              {
+                "id": "A-gsi-rels-imp-rfnd",
+                "label": "NC or Abuse rels with customer asking for refund",
+                "auto_annotation": "NC or Abuse rels with customer asking for refund",
+                "followup_question_group_ids": [
+                  "Q-gsi-rels-imp-rfnd-FUP"
+                ]
+              },
+              {
+                "id": "A-gsi-rels-sim-ptrn",
+                "label": "F rels with similar pattern",
+                "auto_annotation": "F rels with similar pattern",
+                "followup_question_group_ids": [
+                  "Q-gsi-rels-sim-ptrn-FUP"
+                ]
+              },
+              {
+                "id": "A-gsi-rels-none",
+                "label": "None",
+                "auto_annotation": "None"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-uv-call-no-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-uv-cust-call-outcome",
+        "question_string": "What was the outcome of the customer call?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-cust-call-na",
+                "label": "Not Applicable",
+                "auto_annotation": "Not Applicable"
+              },
+              {
+                "id": "A-uv-cust-call-auth",
+                "label": "Customer authorized",
+                "auto_annotation": "Customer authorized",
+                "followup_question_group_ids": [
+                  "Q-uv-cust-call-outcome-FUP"
+                ]
+              },
+              {
+                "id": "A-uv-cust-call-unable-rch",
+                "label": "Unable to reach customer",
+                "auto_annotation": "Unable to reach customer"
+              },
+              {
+                "id": "A-uv-cust-call-wrg-num",
+                "label": "Called Customer, wrong number",
+                "auto_annotation": "Called Customer, wrong number",
+                "followup_question_group_ids": [
+                  "Q-uv-cust-call-outcome-FUP"
+                ]
+              },
+              {
+                "id": "A-uv-cust-call-no-resp",
+                "label": "Called Customer, no response",
+                "auto_annotation": "Called Customer, no response",
+                "followup_question_group_ids": [
+                  "Q-uv-cust-call-outcome-FUP"
+                ]
+              },
+              {
+                "id": "A-uv-cust-call-ooch",
+                "label": "Customer out of calling hours",
+                "auto_annotation": "Customer out of calling hours"
+              },
+              {
+                "id": "A-uv-cust-call-intl",
+                "label": "Cannot call customer - international Customer",
+                "auto_annotation": "Cannot call customer - international Customer"
+              },
+              {
+                "id": "A-uv-cust-call-unauth",
+                "label": "Customer did not authorize",
+                "auto_annotation": "Customer did not authorize",
+                "followup_question_group_ids": [
+                  "Q-uv-cust-call-outcome-FUP"
+                ]
+              },
+              {
+                "id": "A-uv-cust-call-dnd-spk",
+                "label": "Customer denied to speak",
+                "auto_annotation": "Customer denied to speak",
+                "followup_question_group_ids": [
+                  "Q-uv-cust-call-outcome-FUP"
+                ]
+              },
+              {
+                "id": "A-cust-call-no-access",
+                "label": "Unable to call cust-no access",
+                "auto_annotation": "Unable to call cust-no access"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-rc-imp-san-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-rc-ato",
+        "question_string": "Is the VCAC action correct in related account?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rc-ato-y",
+                "label": "Valid VCAC action",
+                "auto_annotation": "Valid VCAC action"
+              },
+              {
+                "id": "A-rc-ato-n",
+                "label": "Invalid VCAC action",
+                "auto_annotation": "Invalid VCAC action"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-rc-legcus",
+        "question_string": "Is the legit customer coming back with new account?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rc-legcus-y",
+                "label": "Yes, Legit customer coming back"
+              },
+              {
+                "id": "A-rc-legcus-n",
+                "label": "No",
+                "auto_annotation": "No"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-reins": {
+    "workflow_questions": [
+      {
+        "id": "Q-reins-90",
+        "question_string": "Was this customer reinstated in the last 90 days? (Check cross-org too)",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-reins-90-y",
+                "label": "Yes",
+                "auto_annotation": "Reinstate noted in last 90 days",
+                "followup_question_group_ids": [
+                  "Q-reins-90-y-FUP"
+                ]
+              },
+              {
+                "id": "A-reins-90-n",
+                "label": "No",
+                "auto_annotation": "No Reinstate in last 90 days"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-bnk-call-yes-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-bnk-call-yes-otcm",
+        "question_string": "What was the outcome of the bank call?",
+        "responses": [
+          {
+            "checkbox_options": [
+              {
+                "id": "A-call-bnk-nme-ver",
+                "label": "Name verified",
+                "auto_annotation": "Name verified"
+              },
+              {
+                "id": "A-call-bnk-addr-ver",
+                "label": "Address verified",
+                "auto_annotation": "Address verified"
+              },
+              {
+                "id": "A-call-bnk-ph-ver",
+                "label": "Phone verified",
+                "auto_annotation": "Phone verified"
+              },
+              {
+                "id": "A-call-bnk-nme-not-ver",
+                "label": "Name not verified",
+                "auto_annotation": "Name not verified"
+              },
+              {
+                "id": "A-call-bnk-addr-not-ver",
+                "label": "Address not verified",
+                "auto_annotation": "Address not verified"
+              },
+              {
+                "id": "A-call-bnk-ph-not-ver",
+                "label": "Phone not verified",
+                "auto_annotation": "Phone not verified"
+              },
+              {
+                "id": "A-call-bnk-bwv",
+                "label": "Bank wont verify",
+                "auto_annotation": "Bank wont verify"
+              },
+              {
+                "id": "A-call-bnk-bwvp",
+                "label": "Bank wont verify phone",
+                "auto_annotation": "Bank wont verify phone"
+              },
+              {
+                "id": "A-call-bnk-unb-rch",
+                "label": "Unable to reach bank",
+                "auto_annotation": "Unable to reach bank"
+              },
+              {
+                "id": "A-call-bnk-ooch",
+                "label": "Bank out of calling hours",
+                "auto_annotation": "Bank out of calling hours"
+              },
+              {
+                "id": "A-call-bnk-cls-wkds",
+                "label": "Bank closed weekends",
+                "auto_annotation": "Bank closed weekends"
+              },
+              {
+                "id": "A-call-bnk-inv-crd",
+                "label": "Invalid card",
+                "auto_annotation": "Invalid card"
+              },
+              {
+                "id": "A-call-bnk-ph-no-fds",
+                "label": "Insufficient funds",
+                "auto_annotation": "Insufficient funds"
+              },
+              {
+                "id": "A-call-bnk-ph-ver-fds",
+                "label": "Sufficient funds",
+                "auto_annotation": "Sufficient funds"
+              }
+            ],
+            "min_selected": 0,
+            "max_selected": 999
+          }
+        ]
+      }
+    ]
+  },
+  "Q-ord-vel-rc-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-ord-vel-rc-cid",
+        "question_string": "Provide CID",
+        "responses": [
+          {
+            "id": "A-ord-vel-rc-cid",
+            "max_length": 25
+          }
+        ]
+      }
+    ]
+  },
+  "Q-uv-call-rgt-prsn-ref-ans-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-uv-call-rgt-prsn-ref-ans-act",
+        "question_string": "Please HOLD Account",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-uv-call-rgt-prsn-ref-ans-act-yes",
+                "label": "OK",
+                "auto_annotation": "OK",
+                "next_node_override": "node-summary"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-set2-chk-1-mre-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-set2-chk-1-mre-act",
+        "question_string": "Please Hold the account",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-set2-chk-1-mre-act",
+                "label": "OK",
+                "next_node_override": "node-add-obs"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-rc-wk-pm-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-rc-wk-pm",
+        "question_string": "Is the payment old/new/expired on related account?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rc-wk-pm-oldac",
+                "label": "Old and active payment method",
+                "auto_annotation": "Old and active payment method",
+                "followup_question_group_ids": [
+                  "Q-rc-wk-pm-oldac-FUP"
+                ]
+              },
+              {
+                "id": "A-rc-wk-pm-oldexp",
+                "label": "Old and expired payment method",
+                "auto_annotation": "Old and expired payment method",
+                "followup_question_group_ids": [
+                  "Q-rc-wk-pm-oldexp-FUP"
+                ]
+              },
+              {
+                "id": "A-rc-wk-pm-new",
+                "label": "New payment method",
+                "auto_annotation": "New payment method"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-uv-call-rgt-prsn-not-avl-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-uv-call-rgt-prsn-not-avl-act",
+        "question_string": "Please HOLD Account",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-uv-call-rgt-prsn-not-avl-act-yes",
+                "label": "OK",
+                "auto_annotation": "OK",
+                "next_node_override": "node-summary"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-pmt-othr-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-pmt-gc-act",
+        "question_string": "Are you ready to Hold the account?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-pmt-gc-act-yes",
+                "label": "Yes",
+                "auto_annotation": "GC-BS-Jump",
+                "next_node_override": "node-man-anno"
+              },
+              {
+                "id": "A-pmt-gc-act-no",
+                "label": "No"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-em-moa-ver-ivrc-iv-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-cus-iv-link",
+        "question_string": "Provide IV link or RC CID",
+        "responses": [
+          {
+            "id": "A-cus-iv-link",
+            "max_length": 150
+          }
+        ]
+      }
+    ]
+  },
+  "Q-seller-ato-yes-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-sellerato-cxl",
+        "question_string": "Please cancel the order and send appropriate blurb",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "Q-sellerato-cxl-ok",
+                "label": "OK",
+                "auto_annotation": "OK"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-strg-vc-rel-y-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-strg-vc-rel-y",
+        "question_string": "Kindly call bank to verify the payment",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-call-bank",
+                "label": "Ok",
+                "auto_annotation": "Bank call",
+                "next_node_override": "node-calls"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-tkn-rel-vc-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-tkn-rel-vc",
+        "question_string": "Is order pattern/echeck pmt pattern match in VC relation?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-tkn-rel-vc-op",
+                "label": "Order pattern match",
+                "auto_annotation": "Order pattern match"
+              },
+              {
+                "id": "A-tkn-rel-vc-dd",
+                "label": "Echeck pmt pattern match",
+                "auto_annotation": "Echeck pmt pattern match"
+              },
+              {
+                "id": "A-tkn-rel-vc-both",
+                "label": "Both match",
+                "auto_annotation": "Both match"
+              },
+              {
+                "id": "A-tkn-rel-vc-no-match",
+                "label": "No match",
+                "auto_annotation": "No match"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-tkn-rel-vc-oh",
+        "question_string": "Does strong VC relation have good completed OH?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-tkn-rel-vc-oh-y",
+                "label": "Yes",
+                "auto_annotation": "Good completed OH",
+                "followup_question_group_ids": [
+                  "Q-tkn-rel-vc-rpt-fup"
+                ]
+              },
+              {
+                "id": "A-tkn-rel-vc-oh-n",
+                "label": "No",
+                "auto_annotation": "Low completed OH"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-sell-stat-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-sell-stat-jump",
+        "question_string": "Take a cancel action and send cancel_bad_seller_listing blurb",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-sell-stat-jump",
+                "label": "Ok",
+                "auto_annotation": "cancel action and sending cancel_bad_seller_listing blurb",
+                "next_node_override": "node-man-anno"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-gsi-oip-no-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-oip-loc-ba",
+        "question_string": "Is the OIP local to the the billing address? (<80km)",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-oip-loc-ba-y",
+                "label": "Yes",
+                "auto_annotation": "OIP local to ba"
+              },
+              {
+                "id": "A-oip-loc-ba-n",
+                "label": "No",
+                "auto_annotation": "OIP not local to ba"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-ach-pmt-nme-ivd-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-ach-pmt-nme-ivd-lnk",
+        "question_string": "Provide Link",
+        "responses": [
+          {
+            "id": "A-ach-pmt-nme-ivd-lnk",
+            "max_length": 100
+          }
+        ]
+      }
+    ]
+  },
+  "Q-rc-type-wk-pmt-cc-inv": {
+    "workflow_questions": [
+      {
+        "id": "Q-rc-type-wk-pmt-gsi",
+        "question_string": "Does IP/UBID match with RC?/ Is there a similar sign in pattern",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rc-type-wk-pmt-gsi-yes",
+                "label": "Yes",
+                "auto_annotation": "IP/UBID match with cui and weak payment relation"
+              },
+              {
+                "id": "A-rc-type-wk-pmt-gsi-no",
+                "label": "No",
+                "auto_annotation": "IP/UBID does not match with cui and weak payment relation"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-rc-type-wk-pmt-ord-ptrn",
+        "question_string": "Does ordering pattern match with RC?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rc-type-wk-pmt-ord-ptrn-yes",
+                "label": "Yes",
+                "auto_annotation": "Ordering pattern matches with weak payment relation"
+              },
+              {
+                "id": "A-rc-type-wk-pmt-ord-ptrn-no",
+                "label": "No",
+                "auto_annotation": "Ordering pattern does not match with weak payment relation"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-rc-type-wk-pmt-cust-call",
+        "question_string": "Do you want the call credit card holder?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rc-type-wk-pmt-cust-call-na",
+                "label": "Card holder call - not applicable",
+                "auto_annotation": "Card holder call - not applicable"
+              },
+              {
+                "id": "A-rc-type-wk-pmt-cust-call-auth",
+                "label": "Card holder authorized",
+                "auto_annotation": "Card holder authorized"
+              },
+              {
+                "id": "A-rc-type-wk-pmt-cust-call-unb-rch",
+                "label": "Unable to reach card holder",
+                "auto_annotation": "Unable to reach card holder"
+              },
+              {
+                "id": "A-rc-type-wk-pmt-cust-call-wrg-num",
+                "label": "Called card holder, wrong number",
+                "auto_annotation": "Called card holder, wrong number"
+              },
+              {
+                "id": "A-rc-type-wk-pmt-cust-call-no-rsp",
+                "label": "Called card holder, no response",
+                "auto_annotation": "Called card holder, no response"
+              },
+              {
+                "id": "A-rc-type-wk-pmt-cust-call-ooch",
+                "label": "Card holder out of calling hours",
+                "auto_annotation": "Card holder out of calling hours"
+              },
+              {
+                "id": "A-rc-type-wk-pmt-cust-call-intl",
+                "label": "Cannot call card holder - international Customer",
+                "auto_annotation": "Cannot call card holder - international Customer"
+              },
+              {
+                "id": "A-rc-type-wk-pmt-cust-call-unauth",
+                "label": "Card holder did not authorize",
+                "auto_annotation": "Card holder did not authorize"
+              },
+              {
+                "id": "A-rc-type-wk-pmt-cust-call-dnd-spk",
+                "label": "Card holder denied to speak",
+                "auto_annotation": "Card holder denied to speak"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-cross-org-ato-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-cross-org-ato-act",
+        "question_string": "Are you ready to take VCAC Action?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-cross-org-ato-act-yes",
+                "label": "Yes",
+                "auto_annotation": "Cross-Org-ATO-Jump",
+                "next_node_override": "node-man-anno"
+              },
+              {
+                "id": "A-cross-org-ato-act-no",
+                "label": "No, Require Further Investigation"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-uv-call-ans-yes-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-uv-call-rgt-prsn",
+        "question_string": "Is customer available to speak?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-uv-call-rgt-prsn-yes",
+                "label": "Yes",
+                "auto_annotation": "cuicorr",
+                "followup_question_group_ids": [
+                  "Q-uv-call-rgt-prsn-yes-FUP"
+                ]
+              },
+              {
+                "id": "A-uv-call-rgt-prsn-cncl",
+                "label": "Yes/Cancel order",
+                "auto_annotation": "cuicorr;[cancel]"
+              },
+              {
+                "id": "A-uv-call-rgt-prsn-not-avl",
+                "label": "Not Available / Call Later",
+                "auto_annotation": "cuiaway; [Requeue]",
+                "followup_question_group_ids": [
+                  "Q-uv-call-rgt-prsn-not-avl-FUP"
+                ]
+              },
+              {
+                "id": "A-uv-call-rgt-prsn-ref-ans",
+                "label": "Refuse to Answer",
+                "auto_annotation": "refuseans; [Hold]",
+                "followup_question_group_ids": [
+                  "Q-uv-call-rgt-prsn-ref-ans-FUP"
+                ]
+              },
+              {
+                "id": "A-uv-call-rgt-prsn-wrg-num",
+                "label": "Wrong Number",
+                "auto_annotation": "wrongnum; [Hold]",
+                "followup_question_group_ids": [
+                  "Q-uv-call-rgt-prsn-wrg-num-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-uv-cust-call-outcome-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-uv-cust-call-info",
+        "question_string": "Provide Customer contact number and Manual annotation to mention with whom inv spoke either ACH/CCH and to provide extra info mentioned by customer ",
+        "responses": [
+          {
+            "id": "A-uv-cust-call-out-cme-num",
+            "max_length": 100
+          }
+        ]
+      }
+    ]
+  },
+  "Q-rels-pm-weak-diff-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-rels-pm-weak-lkd",
+        "question_string": "Is it a Leaked CC?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rels-pm-weak-lkd-yes",
+                "label": "Yes-Fraud",
+                "auto_annotation": "Weak relation is a leaked cc",
+                "next_node_override": "node-man-anno"
+              },
+              {
+                "id": "A-rels-pm-weak-lkd-no",
+                "label": "No",
+                "auto_annotation": "No is not a leaked cc"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-esc-tt-othr-mo-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-esc-tt-othr-mo",
+        "responses": [
+          {
+            "id": "A-esc-tt-othr-mo",
+            "max_length": 50
+          }
+        ]
+      }
+    ]
+  },
+  "Q-rc-imp-frd-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-rc-cls-leg",
+        "question_string": "Is the closure on related account legit/valid?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rc-cls-leg-y",
+                "label": "Valid closure on related account",
+                "auto_annotation": "Valid closure on related account"
+              },
+              {
+                "id": "A-rc-cls-leg-n",
+                "label": "Invalid closure on related account",
+                "auto_annotation": "Invalid closure on related account"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-call-ans-yes-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-call-rgt-prsn",
+        "question_string": "\" Is customer available to speak?\"",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-call-rgt-prsn-yes",
+                "label": "Yes",
+                "auto_annotation": "cuicorr;",
+                "followup_question_group_ids": [
+                  "Q-call-rgt-prsn-yes-fup"
+                ]
+              },
+              {
+                "id": "A-call-rgt-prsn-yes-cxl",
+                "label": "Yes/Cancel order",
+                "auto_annotation": "cuicorr;[cancel]"
+              },
+              {
+                "id": "A-call-rgt-prsn-not-avl",
+                "label": "Not Available / Call Later",
+                "auto_annotation": "cuiaway; [Requeue]",
+                "followup_question_group_ids": [
+                  "Q-call-rgt-prsn-not-avl-FUP"
+                ]
+              },
+              {
+                "id": "A-call-rgt-prsn-ref-ans",
+                "label": "Refuse to Answer",
+                "auto_annotation": "refuseans; [Hold]",
+                "followup_question_group_ids": [
+                  "Q-call-rgt-prsn-ref-ans-FUP"
+                ]
+              },
+              {
+                "id": "A-call-rgt-prsn-wrg-num",
+                "label": "Wrong Number",
+                "auto_annotation": "wrongnum; [Hold]",
+                "followup_question_group_ids": [
+                  "Q-call-rgt-prsn-wrg-num-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-strg-vc-rel-n-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-strg-vc-rel-n",
+        "question_string": "Fraud the acct and send fraud_first",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-weak-rel-f",
+                "label": "Ok",
+                "auto_annotation": "fraud_first",
+                "next_node_override": "node-man-anno"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-dd-alt-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-dd-alt",
+        "question_string": "Is order pattern/echeck pmt pattern match in VC relation?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-dd-alt-op",
+                "label": "Order pattern match",
+                "auto_annotation": "Order pattern match",
+                "followup_question_group_ids": [
+                  "Q-dd-alt-vc-fup"
+                ]
+              },
+              {
+                "id": "A-dd-alt-pmt",
+                "label": "Echeck pmt pattern match",
+                "auto_annotation": "Echeck pmt pattern match",
+                "followup_question_group_ids": [
+                  "Q-dd-alt-vc-fup"
+                ]
+              },
+              {
+                "id": "A-dd-alt-bt",
+                "label": "Both match",
+                "auto_annotation": "Both match",
+                "followup_question_group_ids": [
+                  "Q-dd-alt-vc-fup"
+                ]
+              },
+              {
+                "id": "A-dd-alt-no-mt",
+                "label": "No match",
+                "auto_annotation": "No match",
+                "followup_question_group_ids": [
+                  "Q-dd-alt-vc-fup"
+                ]
+              },
+              {
+                "id": "A-dd-alt-no-str",
+                "label": "No strong vc rel",
+                "auto_annotation": "No strong vc rel"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-uv-frst-set-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-uv-itm-pmt",
+        "question_string": "Was this order paid in a single payment or installments?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-uv-itm-pmt-ok",
+                "label": "OK",
+                "auto_annotation": "payOK"
+              },
+              {
+                "id": "A-uv-itm-pmt-fail",
+                "label": "Fail",
+                "auto_annotation": "payX"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-uv-pmt-nme",
+        "question_string": "Is this card under your name?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-uv-pmt-nme-ok",
+                "label": "OK",
+                "auto_annotation": "ccnameOK"
+              },
+              {
+                "id": "A-uv-pmt-nme-fail",
+                "label": "Fail",
+                "auto_annotation": "ccnameX"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-uv-pmt-bnk",
+        "question_string": "Can you confirm the issuing bank of the CC?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-uv-pmt-bnk-ok",
+                "label": "OK",
+                "auto_annotation": "issuerOK"
+              },
+              {
+                "id": "A-uv-pmt-bnk-fail",
+                "label": "Fail",
+                "auto_annotation": "issuerX"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-uv-set2-chk",
+        "question_string": "Questions answered incorrectly",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-uv-set2-chk-1-mre",
+                "label": "1 or more",
+                "auto_annotation": "Details on account not match",
+                "followup_question_group_ids": [
+                  "Q-uv-set2-chk-1-mre-FUP"
+                ]
+              },
+              {
+                "id": "A-uv-set2-chk-none",
+                "label": "None",
+                "auto_annotation": "Details on account match",
+                "followup_question_group_ids": [
+                  "Q-uv-set2-chk-none-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-uv-call-num-val-yes-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-uv-call-ans",
+        "question_string": "Did the customer answer?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-uv-call-ans-yes",
+                "label": "Yes",
+                "auto_annotation": "ans",
+                "followup_question_group_ids": [
+                  "Q-uv-call-ans-yes-FUP"
+                ]
+              },
+              {
+                "id": "A-uv-call-ans-no",
+                "label": "No",
+                "auto_annotation": "noans",
+                "followup_question_group_ids": [
+                  "Q-uv-call-ans-no-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-pmt-card-tkn-rels-yes-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-lk-cc",
+        "question_string": "Is the CC leaked?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-lk-cc-y",
+                "label": "Yes",
+                "auto_annotation": "Yes"
+              },
+              {
+                "id": "A-lk-cc-n",
+                "label": "No",
+                "auto_annotation": "No",
+                "followup_question_group_ids": [
+                  "Q-rc-type-wk-pmt-cc-inv"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-pay-ver-iv-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-pay-ver-iv",
+        "question_string": "Provide link",
+        "responses": [
+          {
+            "id": "A-pay-ver-iv-lnk",
+            "max_length": 50
+          }
+        ]
+      }
+    ]
+  },
+  "Q-sa-type-cus-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-sa-age",
+        "question_string": "Is the SA new?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-sa-age-new",
+                "label": "New Address",
+                "auto_annotation": "New Address",
+                "followup_question_group_ids": [
+                  "Q-sa-age-new-fup"
+                ]
+              },
+              {
+                "id": "A-sa-age-old",
+                "label": "Old Address",
+                "auto_annotation": "Old Address"
+              }
+            ]
+          }
+        ],
+        "answer_eval_attributes": {
+          "rule_set_name": "Q-sa-age",
+          "schema_name": "GuidedWorkflowBRI"
+        }
+      }
+    ]
+  },
+  "Q-sa-readd-n-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-sa-ver",
+        "question_string": "Is the new SA verified?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-sa-ver-rc",
+                "label": "Verified by RC",
+                "auto_annotation": "Verified by RC",
+                "followup_question_group_ids": [
+                  "Q-sa-ver-cid-fup"
+                ]
+              },
+              {
+                "id": "A-sa-ver-iv",
+                "label": "Verified by IV",
+                "auto_annotation": "Verified by IV",
+                "followup_question_group_ids": [
+                  "Q-sa-ver-lnk-fup"
+                ]
+              },
+              {
+                "id": "A-sa-ver-na",
+                "label": "SA not verified",
+                "auto_annotation": "SA not verified",
+                "followup_question_group_ids": [
+                  "Q-sa-ver-no-fup"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-sa-pat",
+        "question_string": "Did you notice any of the following on SA?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-sa-pat-corp",
+                "label": "Corp Address",
+                "auto_annotation": "Corp Address"
+              },
+              {
+                "id": "A-sa-pat-mil",
+                "label": "Military Address",
+                "auto_annotation": "Military Address"
+              },
+              {
+                "id": "A-sa-pat-edu",
+                "label": "Edu Address",
+                "auto_annotation": "Edu Address"
+              },
+              {
+                "id": "A-sa-pat-wish",
+                "label": "Wishlist Address",
+                "auto_annotation": "Wishlist Address"
+              },
+              {
+                "id": "A-sa-pat-ff",
+                "label": "Reshipper/FF Address",
+                "auto_annotation": "Reshipper/FF Address"
+              },
+              {
+                "id": "A-sa-pat-na",
+                "label": "None",
+                "auto_annotation": "None"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-uv-call-ans-no-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-uv-call-ans-no-act",
+        "question_string": "Please HOLD Account",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-uv-call-ans-no-act-yes",
+                "label": "OK",
+                "auto_annotation": "OK",
+                "next_node_override": "node-summary"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-Others-cs-em-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-Others-cs-em",
+        "responses": [
+          {
+            "id": "A-Others-cs-em-ma",
+            "max_length": 50
+          }
+        ]
+      }
+    ]
+  },
+  "Q-add-anno-rev-tags-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-add-anno-rev-tags",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-Review-GAP",
+                "label": "# Review GAP",
+                "auto_annotation": "# Review GAP"
+              },
+              {
+                "id": "A-Review-SME",
+                "label": "# Review “SME\"",
+                "auto_annotation": "# Review “SME\"",
+                "followup_question_group_ids": [
+                  "Q-Review-SME-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-uvcc-call-yes-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-cuscall-uvcc",
+        "question_string": "Do you need a customer call?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-cuscall-uvcc-yes",
+                "label": "Yes",
+                "auto_annotation": "Need Cus Call - UVCC",
+                "followup_question_group_ids": [
+                  "Q-cuscall-uvcc-yes-FUP"
+                ]
+              },
+              {
+                "id": "A-cuscall-uvcc-no",
+                "label": "No",
+                "auto_annotation": "No need Cus Call - UVCC",
+                "followup_question_group_ids": [
+                  "Q-cuscall-uvcc-no-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-sa": {
+    "workflow_questions": [
+      {
+        "id": "Q-sa-type",
+        "question_string": "Type of Shipping Address?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-sa-type-lkr",
+                "label": "Pack Station/DHL/Hermes/Amazon Locker",
+                "auto_annotation": "Locker",
+                "followup_question_group_ids": [
+                  "Q-sa-type-lkr-fup"
+                ]
+              },
+              {
+                "id": "A-sa-type-cus",
+                "label": "Customer Address",
+                "auto_annotation": "Customer Address",
+                "followup_question_group_ids": [
+                  "Q-sa-readd-n-fup"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-tkn-rel-vc-rpt-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-tkn-rel-vc-rpt",
+        "question_string": "How is the repayment history in strong vc rel?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-tkn-rel-vc-rpt-good",
+                "label": "Good repayment history",
+                "auto_annotation": "Good repayment history"
+              },
+              {
+                "id": "A-tkn-rel-vc-rpt-mod",
+                "label": "Moderate repayment history",
+                "auto_annotation": "Moderate repayment history"
+              },
+              {
+                "id": "A-tkn-rel-vc-rpt-slow",
+                "label": "Slow repayment history",
+                "auto_annotation": "Slow repayment history"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-uv-call-yes-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-uv-custcall-need",
+        "question_string": "Do you need a customer call?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-uv-custcall-need-yes",
+                "label": "Yes",
+                "auto_annotation": "Need Cust Call - UVCC",
+                "followup_question_group_ids": [
+                  "Q-uv-cuscall-yes-FUP"
+                ]
+              },
+              {
+                "id": "A-uv-custcall-need-no",
+                "label": "No",
+                "auto_annotation": "No need for Cust Call - UVCC",
+                "followup_question_group_ids": [
+                  "Q-uv-cuscall-no-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-order-data": {
+    "workflow_questions": [
+      {
+        "id": "Q-item",
+        "question_string": "What is the nature of item?",
+        "tooltip": {
+          "tooltip_string": "\"Increased: Non Suspicious item                \\nReduced Risk: Suspicious item      \"",
+          "tooltip_url": "https://tiny.amazon.com/pfiudkw5/Ncinvestigation"
+        },
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-item-rsky",
+                "label": "Suspicious/ Risky",
+                "auto_annotation": "Suspicious item",
+                "summary_class": "gwf-neg-red"
+              },
+              {
+                "id": "A-item-non-rsky",
+                "label": "Non-Suspicious",
+                "auto_annotation": "Non-suspicious item",
+                "summary_class": "gwf-pos-green"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-ord-vel",
+        "question_string": "Is there order velocity on account?",
+        "tooltip": {
+          "tooltip_string": "\"Increased Risk: Unjustified Order velocity   \\nReduced Risk: Item Combination/Similar ordering pattern related customer/Legit MO\"",
+          "tooltip_url": "https://tiny.amazon.com/add1ytyr/Order_Vel"
+        },
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-ord-vel-leg-mo",
+                "label": "Legit MO",
+                "auto_annotation": "Ord vel - Legit MO",
+                "followup_question_group_ids": [
+                  "Q-ord-vel-FUP"
+                ],
+                "summary_class": "gwf-pos-green"
+              },
+              {
+                "id": "A-ord-vel-it-cmb",
+                "label": "Item combo",
+                "auto_annotation": "Ord vel - Item combination",
+                "summary_class": "gwf-pos-green"
+              },
+              {
+                "id": "A-ord-vel-rc",
+                "label": "Similar ordering pattern in RC",
+                "auto_annotation": "Ord vel but Similar ordering pattern in related customer",
+                "followup_question_group_ids": [
+                  "Q-ord-vel-rc-fup"
+                ],
+                "summary_class": "gwf-pos-green"
+              },
+              {
+                "id": "A-ord-vel-iv",
+                "label": "Justified by IV",
+                "auto_annotation": "Ord vel-Justified by IV",
+                "followup_question_group_ids": [
+                  "Q-ord-vel-iv-fup"
+                ]
+              },
+              {
+                "id": "A-ord-vel-unjust",
+                "label": "Unjustified Order Velocity",
+                "auto_annotation": "Unjustified order velocity",
+                "summary_class": "gwf-neg-red"
+              },
+              {
+                "id": "A-sm-cnceld-it",
+                "label": "Customer coming for same cancelled item",
+                "auto_annotation": "Customer coming for same cancelled item"
+              },
+              {
+                "id": "A-renwd-it",
+                "label": "Item renewed/refurbished",
+                "auto_annotation": "Item renewed/refurbished"
+              },
+              {
+                "id": "A-ord-vel-na",
+                "label": "Order velocity - NA",
+                "auto_annotation": "Order velocity - not applicable"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-ord-val",
+        "question_string": "What is the order value?",
+        "tooltip": {
+          "tooltip_string": "\"Increased Risk : High Value Order    \\nReduced Risk: Low value order and Mod Value order\"",
+          "tooltip_url": "https://tiny.amazon.com/m895fo67/ordervalue"
+        },
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-ord-val-low",
+                "label": "Low Value (0-299 EUR)",
+                "auto_annotation": "Low Value order",
+                "summary_class": "gwf-pos-green"
+              },
+              {
+                "id": "A-ord-val-mod",
+                "label": "Mod Value (300-799 EUR)",
+                "auto_annotation": "Mod Value order"
+              },
+              {
+                "id": "A-ord-val-high",
+                "label": "High Value (>800 EUR)",
+                "auto_annotation": "High Value order",
+                "summary_class": "gwf-neg-red"
+              }
+            ]
+          }
+        ],
+        "answer_eval_attributes": {
+          "rule_set_name": "Q-ord-val-de-nl",
+          "schema_name": "GuidedWorkflowBRI"
+        }
+      },
+      {
+        "id": "Q-ord-amf-mer",
+        "question_string": "Is the order Amazon fulfilled/Merchant fulfilled?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-ord-amf-mer-y",
+                "label": "AFO",
+                "auto_annotation": "Amazon fulfilled order"
+              },
+              {
+                "id": "A-ord-amf-mer-n",
+                "label": "MFO",
+                "auto_annotation": "Merchant fulfilled order",
+                "followup_question_group_ids": [
+                  "Q-pric-error-FUP",
+                  "Q-pric-error-y-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-cross-org-no-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-em-info",
+        "question_string": "Email Information",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-em-corr-ach",
+                "label": "E-handle corr ach",
+                "auto_annotation": "Email handle corresponds account holder",
+                "followup_question_group_ids": [
+                  "Q-em-corr-dnc-ach-moa-FUP"
+                ],
+                "summary_class": "gwf-pos-green"
+              },
+              {
+                "id": "A-em-dnc-ach",
+                "label": "E-handle dnc ach",
+                "auto_annotation": "Email handle doesn’t corresponds account holder",
+                "followup_question_group_ids": [
+                  "Q-em-corr-dnc-ach-moa-FUP"
+                ],
+                "summary_class": "gwf-neg-red"
+              },
+              {
+                "id": "A-em-moa",
+                "label": "MOA",
+                "auto_annotation": "Mobile only account",
+                "followup_question_group_ids": [
+                  "Q-em-corr-dnc-ach-moa-FUP"
+                ]
+              },
+              {
+                "id": "A-em-disp",
+                "label": "Disposable edom",
+                "auto_annotation": "Disposable email domain",
+                "summary_class": "gwf-neg-red"
+              },
+              {
+                "id": "A-em-rsk",
+                "label": "Risky/Suspcious edom",
+                "auto_annotation": "Risky/Suspcious edom",
+                "summary_class": "gwf-neg-red"
+              },
+              {
+                "id": "A-em-bb",
+                "label": "Legit edom",
+                "auto_annotation": "Legit edom",
+                "summary_class": "gwf-neg-red"
+              },
+              {
+                "id": "A-em-rsk-alfnum",
+                "label": "Risky alpha numeric e-handle",
+                "auto_annotation": "risky alpha numeric e-handle"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-set1-chk-2-mre-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-set1-chk-2-mre-act",
+        "question_string": "Please Hold the account",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-set1-chk-2-mre-act",
+                "label": "OK",
+                "next_node_override": "node-add-obs"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-rels-pm-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-rels-pm-status",
+        "question_string": "How are the payment relations related to the cui?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rels-pm-strng",
+                "label": "Strong rel",
+                "auto_annotation": "Strong rel"
+              },
+              {
+                "id": "A-rels-pm-weak",
+                "label": "Weak rel",
+                "auto_annotation": "Weak rel",
+                "followup_question_group_ids": [
+                  "Q-rels-pm-weak-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-uv-call-rgt-prsn-wrg-num-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-uv-call-rgt-prsn-wrg-num-act",
+        "question_string": "Please HOLD Account",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-uv-call-rgt-prsn-wrg-num-act-yes",
+                "label": "OK",
+                "auto_annotation": "OK",
+                "next_node_override": "node-summary"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-add-anno": {
+    "workflow_questions": [
+      {
+        "id": "Q-add-anno-thm",
+        "question_string": "Would like to add more annotations?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-add-anno-rev-tags",
+                "label": "Review Tags",
+                "auto_annotation": "Review Tags",
+                "followup_question_group_ids": [
+                  "Q-add-anno-rev-tags-FUP"
+                ]
+              },
+              {
+                "id": "A-add-anno-MO-TT",
+                "label": "MO Names/ESC TT",
+                "auto_annotation": "MO Names/ESC TT",
+                "followup_question_group_ids": [
+                  "Q-add-anno-MO-TT-FUP"
+                ]
+              },
+              {
+                "id": "A-add-anno-cs-em-ctc",
+                "label": "CS/Email Contact Info",
+                "auto_annotation": "CS/Email Contact Info",
+                "followup_question_group_ids": [
+                  "Q-add-anno-cs-em-ctc-FUP"
+                ]
+              },
+              {
+                "id": "A-add-anno-wf",
+                "label": "work flow mismatch",
+                "auto_annotation": "work flow mismatch",
+                "followup_question_group_ids": [
+                  "Q-add-anno-wf-FUP"
+                ]
+              },
+              {
+                "id": "A-add-anno-no",
+                "label": "No Anno req",
+                "auto_annotation": "No Anno req"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-action-raise-MO",
+        "question_string": "Do you want to raise an MO to the risk mining team?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-action-raise-yes",
+                "label": "Yes",
+                "auto_annotation": "Raise an MO to risk mining to team"
+              },
+              {
+                "id": "A-action-raise-no",
+                "label": "No",
+                "auto_annotation": "Raising MO- not req"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-action",
+        "question_string": "What action do you want to take on the account?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-action-pass",
+                "label": "Pass",
+                "auto_annotation": "Pass"
+              },
+              {
+                "id": "A-action-cxl",
+                "label": "Cancel",
+                "auto_annotation": "Cancel",
+                "followup_question_group_ids": [
+                  "Q-action-cxl-FUP"
+                ]
+              },
+              {
+                "id": "A-action-hold",
+                "label": "Hold",
+                "auto_annotation": "Hold",
+                "followup_question_group_ids": [
+                  "Q-action-hold-FUP"
+                ]
+              },
+              {
+                "id": "A-action-frd",
+                "label": "Fraud",
+                "auto_annotation": "Fraud",
+                "followup_question_group_ids": [
+                  "Q-action-frd-FUP"
+                ]
+              },
+              {
+                "id": "A-action-san",
+                "label": "Sanitize",
+                "auto_annotation": "Sanitize",
+                "followup_question_group_ids": [
+                  "Q-action-san-FUP"
+                ]
+              },
+              {
+                "id": "A-action-cls",
+                "label": "Bad debt - Closure",
+                "auto_annotation": "Bad debt - Closure"
+              },
+              {
+                "id": "A-action-dl",
+                "label": "Decline",
+                "auto_annotation": "Decline"
+              },
+              {
+                "id": "A-action-rq",
+                "label": "Requeue",
+                "auto_annotation": "Requeue",
+                "followup_question_group_ids": [
+                  "Q-action-rq-fup"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-rels-pm-weak-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-rels-pm-weak-ptrn",
+        "question_string": "What patterns are noted in token relations?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rels-pm-weak-no-ptrn",
+                "label": "No similar pattern",
+                "auto_annotation": "No similar pattern"
+              },
+              {
+                "id": "A-rels-pm-weak-diff-accn",
+                "label": "Different account names with same CC",
+                "auto_annotation": "Different account names with same CC",
+                "followup_question_group_ids": [
+                  "Q-rels-pm-weak-diff-FUP"
+                ]
+              },
+              {
+                "id": "A-rels-pm-weak-diff-addy",
+                "label": "Same CC relations with different addresses",
+                "auto_annotation": "Same CC relations with different addresses"
+              },
+              {
+                "id": "A-rels-pm-weak-legit-MO",
+                "label": "Legit MO",
+                "auto_annotation": "Legit MO"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-rc-strnrel-2-n-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-rc-frdmo2",
+        "question_string": "Is there a fraud MO observed?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rc-frdmo2-id",
+                "label": "ID THEFT",
+                "auto_annotation": "ID THEFT"
+              },
+              {
+                "id": "A-rc-frdmo2-rfo",
+                "label": "RFO",
+                "auto_annotation": "RFO"
+              },
+              {
+                "id": "A-rc-frdmo2-n",
+                "label": "No",
+                "auto_annotation": "No"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-gsi-oip-yes-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-tz",
+        "question_string": "Is TZ local to Billing Country/Shipping country?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-gsi-tz-bc-corr",
+                "label": "Yes",
+                "auto_annotation": "TZ corresponds billing country",
+                "summary_class": "gwf-pos-green"
+              },
+              {
+                "id": "A-gsi-tz-bc-dnc",
+                "label": "No",
+                "auto_annotation": "TZ doesn’t corresponds billing country",
+                "summary_class": "gwf-neg-red"
+              },
+              {
+                "id": "A-gsi-tz-na",
+                "label": "NA",
+                "auto_annotation": "TZ-NA (TZ not captured in GSI)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-gsi-rels-imp-rfnd-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-gsi-rels-imp-rfnd-action",
+        "question_string": "Do you want to pass the case for abuse pattern?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-gsi-rels-imp-rfnd-action-yes",
+                "label": "Yes",
+                "auto_annotation": "Action taken with abuse pattern"
+              },
+              {
+                "id": "A-gsi-rels-imp-rfnd-action-no",
+                "label": "No",
+                "auto_annotation": "No action"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-ord-vel-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-leg-mo",
+        "question_string": "What is the legit MO?",
+        "tooltip": {
+          "tooltip_url": "https://tiny.amazon.com/pfiudkw5/Ncinvestigation"
+        },
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-leg-mo-mil",
+                "label": "Mil MO",
+                "auto_annotation": "Military MO",
+                "summary_class": "gwf-pos-green"
+              },
+              {
+                "id": "A-leg-mo-reseller",
+                "label": "Re-seller MO",
+                "auto_annotation": "Re-seller MO",
+                "summary_class": "gwf-pos-green"
+              },
+              {
+                "id": "A-leg-mo-corp-org-edu",
+                "label": "Corp/Org/Edu MO",
+                "auto_annotation": "Corporate/Organization MO/Education MO",
+                "followup_question_group_ids": [
+                  "Q-corp-mo-FUP"
+                ],
+                "summary_class": "gwf-pos-green"
+              },
+              {
+                "id": "A-leg-mo-intl",
+                "label": "International MO",
+                "auto_annotation": "International customer MO",
+                "summary_class": "gwf-pos-green"
+              },
+              {
+                "id": "A-leg-mo-othr",
+                "label": "Others (Seasonal/EGC to services)",
+                "auto_annotation": "Others (Seasonal/Electronic gift cards to services)",
+                "summary_class": "gwf-pos-green"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-leg-mo-act",
+        "question_string": "Are you ready to PASS the orders?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-leg-mo-act-yes",
+                "label": "Yes",
+                "auto_annotation": "Ord-vel-lgt-MO-Jump",
+                "next_node_override": "node-man-anno"
+              },
+              {
+                "id": "A-leg-mo-act-no",
+                "label": "No"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-call-num-val-yes-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-call-ans",
+        "question_string": "Did the customer answer?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-call-ans-yes",
+                "label": "Yes",
+                "auto_annotation": "ans;",
+                "followup_question_group_ids": [
+                  "Q-call-ans-yes-FUP"
+                ]
+              },
+              {
+                "id": "A-call-ans-no",
+                "label": "No",
+                "auto_annotation": "noans; [Requeue]",
+                "followup_question_group_ids": [
+                  "Q-call-ans-no-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-sell-ato-norm-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-sell-ato-norm-jump",
+        "question_string": "Take a cancel action and send cancel_technical_error  blurb",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-sell-ato-norm-jump",
+                "label": "Ok",
+                "auto_annotation": "cancel action and sending cancel_technical_error  blurb",
+                "next_node_override": "node-man-anno"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-tkn-rel-sta-VC-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-tkn-rel-vc-exp",
+        "question_string": "Is the card expired in token VC relation?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-tkn-rel-vc-exp-yes",
+                "label": "Yes",
+                "auto_annotation": "Card expired in token rel"
+              },
+              {
+                "id": "A-tkn-rel-vc-exp-no",
+                "label": "No",
+                "auto_annotation": "Card is not expired in token rel",
+                "followup_question_group_ids": [
+                  "Q-pmt-card-tkn-rels-yes-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-pmt-card-tkn-rels-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-tkn-rel-sta-exp5",
+        "question_string": "What is the status of payment token relation?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-tkn-rel-sta-NC",
+                "label": "NC",
+                "auto_annotation": "NC token rel"
+              },
+              {
+                "id": "A-tkn-rel-sta-VC",
+                "label": "VC",
+                "auto_annotation": "VC token rel",
+                "followup_question_group_ids": [
+                  "Q-tkn-rel-vc-fup"
+                ]
+              },
+              {
+                "id": "A-tkn-rel-sta-san",
+                "label": "Sanit",
+                "auto_annotation": "Sanitize token relation"
+              },
+              {
+                "id": "A-tkn-rel-sta-f",
+                "label": "Fraud",
+                "auto_annotation": "Fraud token relation"
+              },
+              {
+                "id": "A-tkn-rel-sta-lkd",
+                "label": "Leaked CC",
+                "auto_annotation": "Leaked CC",
+                "followup_question_group_ids": [
+                  "Q-strg-vc-rel-fup"
+                ]
+              },
+              {
+                "id": "A-abus",
+                "label": "Abuse",
+                "auto_annotation": "Abuse token relations"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-rc-strnrel-2-iv-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-rc-strnrel-2-iv-lnk",
+        "question_string": "Provide IV link",
+        "responses": [
+          {
+            "id": "A-rc-strnrel-2-iv-lnk",
+            "max_length": 150
+          }
+        ]
+      }
+    ]
+  },
+  "Q-ord-vel-iv-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-ord-vel-iv-lnk",
+        "question_string": "Provide IV link",
+        "responses": [
+          {
+            "id": "A-ord-vel-iv-lnk",
+            "max_length": 150
+          }
+        ]
+      }
+    ]
+  },
+  "Q-set1-chk-none-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-set1-chk-none-act",
+        "question_string": "Please Pass the order",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-set1-chk-none-act",
+                "label": "OK",
+                "next_node_override": "node-add-obs"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-cc-dd-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-pmt-tkn-rels",
+        "question_string": "Are there relations thru token ID?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-pmt-tkn-rels-yes",
+                "label": "Yes",
+                "auto_annotation": "Payment relation through token ID",
+                "followup_question_group_ids": [
+                  "Q-pmt-card-tkn-rels-FUP"
+                ],
+                "summary_class": "gwf-neg-red"
+              },
+              {
+                "id": "A-pmt-tkn-rels-no",
+                "label": "No",
+                "auto_annotation": "No Payment relation through token ID",
+                "followup_question_group_ids": [
+                  "Q-dd-alt-fup"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-pmt-new-decline",
+        "question_string": "Is Customer is adding new payment after the previous payment got declined?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-pmt-new-decline-yes",
+                "label": "Yes",
+                "auto_annotation": "New pmt as prev pmt got declined"
+              },
+              {
+                "id": "A-pmt-new-decline-no",
+                "label": "No",
+                "auto_annotation": "no New pmt"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-uv-set1-chk-2-mre-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-uv-set1-chk-2-mre-act",
+        "question_string": "Please FRAUD the account",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-uv-set1-chk-2-mre-act",
+                "label": "OK",
+                "auto_annotation": "OK",
+                "next_node_override": "node-summary"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-rc-imp-cbbd-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-rc-cb-lim",
+        "question_string": "Check if the CB/BD is under SOP limit",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rc-cb-lim-un",
+                "label": "CB/BD under SOP limit",
+                "auto_annotation": "CB/BD under SOP limit"
+              },
+              {
+                "id": "A-rc-cb-lim-ab",
+                "label": "CB/BD above SOP limit",
+                "auto_annotation": "CB/BD above SOP limit"
+              },
+              {
+                "id": "A-rc-cb-lim-ser",
+                "label": "Service CB/Prime CB/CB/BD due to ATO",
+                "auto_annotation": "Service CB/Prime CB/CB/BD due to ATO"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-gsi-cid-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-gsi-cid",
+        "question_string": "Please impactful relation CID",
+        "responses": [
+          {
+            "id": "A-gsi-cid",
+            "max_length": 15
+          }
+        ]
+      }
+    ]
+  },
+  "Q-set2-chk-none-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-set2-chk-none-act",
+        "question_string": "Please Pass the order",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-set2-chk-none-act",
+                "label": "OK",
+                "next_node_override": "node-add-obs"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "q-tz-ip-gsi-chk-yes-FUP": {
+    "workflow_questions": [
+      {
+        "id": "q-tz-ip-diff-cy-rel",
+        "question_string": "Did you validate between CUI and  time zone /sign in from different country?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "a-tz-ip-diff-cy-rel-iv",
+                "label": "Timezone/Country code related to CUI by IV",
+                "auto_annotation": "Tz/Country code rel to CUI by IV"
+              },
+              {
+                "id": "a-tz-ip-diff-cy-rel-rc",
+                "label": "Time zone/country code rels old in strong RC rel",
+                "auto_annotation": "Tz/Country code rels old in strong RC rel"
+              },
+              {
+                "id": "a-tz-ip-diff-cy-rel-mo",
+                "label": "Positive MO pattern-(cruise mo, mil mo etc.)",
+                "auto_annotation": "Pos MO pattrn-(cruise mo, mil mo, edu mo etc.)"
+              },
+              {
+                "id": "a-tz-ip-diff-cy-rel-vpn",
+                "label": "time zone/country code due to VPN sign ins",
+                "auto_annotation": "TZ/Country  code  due to VPN sign ins"
+              },
+              {
+                "id": "a-tz-ip-diff-cy-rel-cc-cde",
+                "label": "Unable to relate timezone and counrty code with CUI",
+                "auto_annotation": "Unable to rel tz country code with CUI"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-reins-90-y-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-reins-corr",
+        "question_string": "Was the reinstate correct?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-reins-corr-y",
+                "label": "Yes",
+                "auto_annotation": "Correct Reinstate"
+              },
+              {
+                "id": "A-reins-corr-n",
+                "label": "No",
+                "auto_annotation": "Incorrect Reinstate",
+                "followup_question_group_ids": [
+                  "Q-reins-corr-n-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-uv-cuscall-yes-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-uv-call-num-val",
+        "question_string": "Is the phone number valid?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-uv-call-num-val-yes",
+                "label": "Yes",
+                "auto_annotation": "phcorr;",
+                "followup_question_group_ids": [
+                  "Q-uv-call-num-val-yes-FUP"
+                ]
+              },
+              {
+                "id": "A-uv-call-num-val-no",
+                "label": "No",
+                "auto_annotation": "phinvalid; [Hold]",
+                "followup_question_group_ids": [
+                  "Q-uv-call-num-val-no-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-cuscall-uvcc-yes-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-call-num-val",
+        "question_string": "Is the phone number valid?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-call-num-val-yes",
+                "label": "Yes",
+                "auto_annotation": "phcorr;",
+                "followup_question_group_ids": [
+                  "Q-call-num-val-yes-fup"
+                ]
+              },
+              {
+                "id": "A-call-num-val-no",
+                "label": "No",
+                "auto_annotation": "phinvalid; [Hold]",
+                "followup_question_group_ids": [
+                  "Q-call-num-val-no-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-sa-ver-iv-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-sa-ver-iv-link",
+        "question_string": "Please provide Shipping Address Verified IV Link",
+        "responses": [
+          {
+            "id": "A-sa-ver-iv-link",
+            "max_length": 100
+          }
+        ]
+      }
+    ]
+  },
+  "Q-ba-new-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-ba-ver",
+        "question_string": "Is the BA verified on CUI/CCH details in IV or RC?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-ba-ver-iv",
+                "label": "BA verified on CUI/CCH in IV",
+                "auto_annotation": "BA verified on CUI/CCH in IV"
+              },
+              {
+                "id": "A-ba-ver-rc",
+                "label": "BA verified on CUI/CCH in RC",
+                "auto_annotation": "BA verified on CUI/CCH in RC"
+              },
+              {
+                "id": "A-ba-ver-na",
+                "label": "BA not verified",
+                "auto_annotation": "BA not verified"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-cust-call": {
+    "workflow_questions": [
+      {
+        "id": "Q-cust-call",
+        "question_string": "What was the outcome of the customer call?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-cust-call-na",
+                "label": "Customer call - not applicable",
+                "auto_annotation": "Customer call - not applicable"
+              },
+              {
+                "id": "A-cust-call-auth",
+                "label": "Customer authorized",
+                "auto_annotation": "Customer authorized",
+                "followup_question_group_ids": [
+                  "Q-cust-call-FUP"
+                ]
+              },
+              {
+                "id": "A-cust-call-unb-rch",
+                "label": "Unable to reach customer",
+                "auto_annotation": "Unable to reach customer"
+              },
+              {
+                "id": "A-cust-call-wrg-num",
+                "label": "Called Customer, wrong number",
+                "auto_annotation": "Called Customer, wrong number",
+                "followup_question_group_ids": [
+                  "Q-cust-call-FUP"
+                ]
+              },
+              {
+                "id": "A-cust-call-no-resp",
+                "label": "Called Customer, no response",
+                "auto_annotation": "Called Customer, no response"
+              },
+              {
+                "id": "A-cust-call-ooch",
+                "label": "Customer out of calling hours",
+                "auto_annotation": "Customer out of calling hours"
+              },
+              {
+                "id": "A-cust-call-intl",
+                "label": "Cannot call customer - international Customer",
+                "auto_annotation": "Cannot call customer - international Customer"
+              },
+              {
+                "id": "A-cust-call-unauth",
+                "label": "Customer did not authorize",
+                "auto_annotation": "Customer did not authorize",
+                "followup_question_group_ids": [
+                  "Q-cust-call-FUP"
+                ]
+              },
+              {
+                "id": "A-cust-call-dnd-spk",
+                "label": "Customer denied to speak",
+                "auto_annotation": "Customer denied to speak",
+                "followup_question_group_ids": [
+                  "Q-cust-call-FUP"
+                ]
+              },
+              {
+                "id": "A-cust-call-no-access",
+                "label": "Unable to call cust-no access (VCC)",
+                "auto_annotation": "Unable to call cust-no access (VCC)"
+              },
+              {
+                "id": "A-cust-call-rqst-cxl",
+                "label": "Customer requested to cancel the order"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-call-rgt-prsn-not-avl-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-call-rgt-prsn-not-avl-act",
+        "question_string": "Please Hold the account",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-call-rgt-prsn-not-avl-act-yes",
+                "label": "OK",
+                "next_node_override": "node-add-obs"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-add-anno-wf-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-add-anno-wf-txt",
+        "responses": [
+          {
+            "id": "A-add-anno-wf-txt",
+            "max_length": 15
+          }
+        ]
+      }
+    ]
+  },
+  "Q-pmt-mthd-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-pmt-open-debt",
+        "question_string": "Is there open debt on the account or related account?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-pmt-open-debt-acc",
+                "label": "Open debt in account",
+                "auto_annotation": "Open debt in account",
+                "followup_question_group_ids": [
+                  "Q-bd-acc-rels-FUP"
+                ]
+              },
+              {
+                "id": "A-pmt-open-debt-rel",
+                "label": "Open debt in related account",
+                "auto_annotation": "Open debt in related account",
+                "followup_question_group_ids": [
+                  "Q-bd-acc-rels-FUP"
+                ]
+              },
+              {
+                "id": "A-pmt-open-debt-no",
+                "label": "No",
+                "auto_annotation": "Open debt less than SOP"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-pmt-rh",
+        "question_string": "How is the customer repayment history and in related account if applicable?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-pmt-rh-na",
+                "label": "Not applicable",
+                "auto_annotation": "Repayment History - Not applicable"
+              },
+              {
+                "id": "A-pmt-rh-gud",
+                "label": "Good repayment (~less than 6 weeks)",
+                "auto_annotation": "Good repayment (~less than 6 weeks)",
+                "followup_question_group_ids": [
+                  "Q-pmt-rh-FUP"
+                ],
+                "summary_class": "gwf-pos-green"
+              },
+              {
+                "id": "A-pmt-rh-mod",
+                "label": "Mod repayment (~between 6 and 9 weeks)",
+                "auto_annotation": "Mod repayment (~between 6 and 9 weeks)",
+                "followup_question_group_ids": [
+                  "Q-pmt-rh-FUP"
+                ]
+              },
+              {
+                "id": "A-pmt-rh-slw",
+                "label": "Slow repayment (~more than 9 weeks)",
+                "auto_annotation": "Slow repayment (~more than 9 weeks)",
+                "followup_question_group_ids": [
+                  "Q-pmt-rh-FUP"
+                ],
+                "summary_class": "gwf-neg-red"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-gsi-rels-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-gsi-rels-act",
+        "question_string": "Are you ready to Hold the account?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-gsi-rels-act-yes",
+                "label": "Yes",
+                "auto_annotation": "GSI-Imp-rels-Jump",
+                "next_node_override": "node-man-anno"
+              },
+              {
+                "id": "A-gsi-rels-act-no",
+                "label": "No"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-sell-stat-norm-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-sell-ato",
+        "question_string": "Is there an ATO in the seller account?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-sell-ato-y",
+                "label": "Yes",
+                "auto_annotation": "ATO in seller account",
+                "followup_question_group_ids": [
+                  "Q-sell-stat-FUP"
+                ]
+              },
+              {
+                "id": "A-sell-ato-n",
+                "label": "No",
+                "auto_annotation": "no ATO in seller account"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-pmt-creditcard-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-pmt-vel-cc",
+        "question_string": "Is there payment velocity (>3 payment in the last 7 days) on account?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-pmt-vel-simi-ptrn-rc",
+                "label": "Similar pattern in RC/CUI",
+                "auto_annotation": "Similar pattern in RC/CUI"
+              },
+              {
+                "id": "A-pmt-vel-ppd-ptrn",
+                "label": "Pattern of pre-paid cards",
+                "auto_annotation": "Pattern of pre-paid cards"
+              },
+              {
+                "id": "A-pmt-vel-unjust",
+                "label": "Unjustified pmt Velocity",
+                "auto_annotation": "Unjustified pmt Velocity"
+              },
+              {
+                "id": "A-pmt-vel-no",
+                "label": "No pmt velocity",
+                "auto_annotation": "No pmt velocity"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-sa-ver-cid-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-sa-ver-cid",
+        "question_string": "Provide CID",
+        "responses": [
+          {
+            "id": "A-sa-ver-cid",
+            "max_length": 25
+          }
+        ]
+      }
+    ]
+  },
+  "Q-dd-alt-vc-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-dd-alt-vc",
+        "question_string": "Does strong VC relation have good completed OH?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-dd-alt-vc-y",
+                "label": "Yes",
+                "auto_annotation": "Good completed OH",
+                "followup_question_group_ids": [
+                  "Q-tkn-rel-vc-rpt-fup"
+                ]
+              },
+              {
+                "id": "A-dd-alt-vc-n",
+                "label": "No",
+                "auto_annotation": "Low completed OH"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-add-anno-MO-TT-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-add-anno-MO-TT",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-mo-RFO",
+                "label": "RFO MO",
+                "auto_annotation": "RFO MO"
+              },
+              {
+                "id": "A-mo-Rslr",
+                "label": "Re-seller MO",
+                "auto_annotation": "Re-seller MO"
+              },
+              {
+                "id": "A-mo-Slpr",
+                "label": "Sleeper MO",
+                "auto_annotation": "Sleeper MO"
+              },
+              {
+                "id": "A-ID-Thft",
+                "label": "ID Theft MO",
+                "auto_annotation": "ID Theft MO"
+              },
+              {
+                "id": "A-esc-tt",
+                "label": "ESC TT",
+                "auto_annotation": "ESC TT",
+                "followup_question_group_ids": [
+                  "Q-esc-tt-othr-mo-FUP"
+                ]
+              },
+              {
+                "id": "A-Othr-MO",
+                "label": "Other MO",
+                "auto_annotation": "Other MO",
+                "followup_question_group_ids": [
+                  "Q-esc-tt-othr-mo-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-cust-call-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-cust-call-link",
+        "question_string": "Provide Customer contact number and provide extra info mentioned by customer",
+        "responses": [
+          {
+            "id": "A-cust-call",
+            "max_length": 100
+          }
+        ]
+      }
+    ]
+  },
+  "Q-cust-data": {
+    "workflow_questions": [
+      {
+        "id": "Q-cross-org",
+        "question_string": "Is the customer VC in cross org?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-cross-org-yes",
+                "label": "Yes",
+                "auto_annotation": "VC in diff MP",
+                "followup_question_group_ids": [
+                  "Q-cross-org-FUP"
+                ]
+              },
+              {
+                "id": "A-cross-org-no",
+                "label": "No",
+                "auto_annotation": "Not vc in diff MP",
+                "followup_question_group_ids": [
+                  "Q-cross-org-no-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-nc-drmt",
+        "question_string": "Is the customer dormant?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-nc-drmt-yes",
+                "label": "Yes",
+                "auto_annotation": "Dormant NC"
+              },
+              {
+                "id": "A-nc-drmt-no",
+                "label": "No",
+                "auto_annotation": "Not a dormant NC"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-ach-pmt-nme",
+        "question_string": "Does account name corr to payment name?",
+        "tooltip": {
+          "tooltip_string": "\"Increased Risk: Account holder doesn't corresponds to Payment holder          \\nReduced Risk: Account holder corresponds to payment holder /Account holder and payment holder name corresponds by family name / Account holder and payment holder names verified by IV\"",
+          "tooltip_url": "https://tiny.amazon.com/pfiudkw5/Ncinvestigation"
+        },
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-ach-pmt-nme-corr",
+                "label": "ACH corr Payment name",
+                "auto_annotation": "Account holder corresponds to payment holder",
+                "summary_class": "gwf-pos-green"
+              },
+              {
+                "id": "A-ach-pmt-nme-dnc",
+                "label": "ACH dnc Payment name",
+                "auto_annotation": "Account holder doesn’t corresponds to payment holder",
+                "summary_class": "gwf-neg-red"
+              },
+              {
+                "id": "A-ach-pmt-nme-fam",
+                "label": "ACH/Payment name corr by Family Name",
+                "auto_annotation": "Account holder and payment holder name corresponds by family name",
+                "summary_class": "gwf-pos-green"
+              },
+              {
+                "id": "A-ach-pmt-nme-ivd",
+                "label": "ACH/Payment name verified by IV",
+                "auto_annotation": "Account holder and payment holder names verified by IV",
+                "followup_question_group_ids": [
+                  "Q-ach-pmt-nme-ivd-FUP"
+                ],
+                "summary_class": "gwf-pos-green"
+              },
+              {
+                "id": "A-ach-pmt-nme-na",
+                "label": "Pmt Name-NA",
+                "auto_annotation": "Payment name not applicable"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-iv-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-iv-otcm",
+        "question_string": "How is the outcome of internet verification?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-iv-otcm-str-link",
+                "label": "I am able to establish a strong relation with the account holder and the profile link found",
+                "auto_annotation": "I am able to establish a strong relation with the account holder and the profile link found",
+                "summary_class": "gwf-pos-green"
+              },
+              {
+                "id": "A-iv-otcm-lgt-link",
+                "label": "The internet link is legit",
+                "auto_annotation": "The internet link is legit",
+                "summary_class": "gwf-pos-green"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-iv-link",
+        "question_string": "Provide link of external IV",
+        "responses": [
+          {
+            "id": "A-iv-link",
+            "max_length": 100
+          }
+        ]
+      }
+    ]
+  },
+  "Q-pmt-card-new-n-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-pmt-card-tkn-rels",
+        "question_string": "Are there any relations thru token?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-pmt-card-tkn-rels-yes",
+                "label": "Yes",
+                "auto_annotation": "Yes",
+                "followup_question_group_ids": [
+                  "Q-tkn-rel-sta-VC-FUP"
+                ]
+              },
+              {
+                "id": "A-pmt-card-tkn-rels-no",
+                "label": "No",
+                "auto_annotation": "No"
+              }
+            ]
+          }
+        ],
+        "answer_eval_attributes": {
+          "rule_set_name": "Q-pmt-card-tkn-rels",
+          "schema_name": "GuidedWorkflowBRI"
+        }
+      }
+    ]
+  },
+  "Q-pric-error-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-pric-error",
+        "question_string": "Do you notice a pricing error on the orders?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-pric-error-y",
+                "label": "Yes",
+                "auto_annotation": "Price Error noted on orders"
+              },
+              {
+                "id": "A-pric-error-n",
+                "label": "No",
+                "auto_annotation": "No price error on orders"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-rc-imp-vc-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-rc-frdmo",
+        "question_string": "Is there a family fraud/Legit MO observed?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rc-frdmo-y",
+                "label": "Fam Fraud",
+                "auto_annotation": "Fam Fraud"
+              },
+              {
+                "id": "A-rc-frdmo-legmo",
+                "label": "Legit MO",
+                "auto_annotation": "Legit MO"
+              },
+              {
+                "id": "A-rc-frdmo-n",
+                "label": "No MO",
+                "auto_annotation": "No MO",
+                "summary_class": "gwf-pos-green"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-sa-ver-lnk-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-sa-ver-lnk",
+        "question_string": "Provide IV link",
+        "responses": [
+          {
+            "id": "A-sa-ver-lnk",
+            "max_length": 150
+          }
+        ]
+      }
+    ]
+  },
+  "Q-rc-wk-pm-oldexp-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-rc-bancal",
+        "question_string": "Call the bank to validate payment method information.",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rc-bancal",
+                "label": "ok",
+                "auto_annotation": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-rc-wk-oth-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-rc-strnrel-2",
+        "question_string": "Did you try making it a strong relation?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rc-strnrel-2-ip",
+                "label": "IP range/block trusted in weak relation",
+                "auto_annotation": "IP range/block trusted in weak relation"
+              },
+              {
+                "id": "A-rc-strnrel-2-iv",
+                "label": "IV relation found between CUI and weak relation",
+                "auto_annotation": "IV relation found between CUI and weak relation",
+                "followup_question_group_ids": [
+                  "Q-rc-strnrel-2-iv-fup"
+                ]
+              },
+              {
+                "id": "A-rc-strnrel-2-op",
+                "label": "CUI Ordering pattern match with weak relation",
+                "auto_annotation": "CUI Ordering pattern match with weak relation"
+              },
+              {
+                "id": "A-rc-strnrel-2-n",
+                "label": "Not a strong relation",
+                "auto_annotation": "Not a strong relation",
+                "followup_question_group_ids": [
+                  "Q-rc-strnrel-2-n-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-rc-wk-fam-ln",
+        "question_string": "Does the relation share family last name?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rc-wk-fam-ln-y",
+                "label": "Yes",
+                "auto_annotation": "The relation shares same family last name"
+              },
+              {
+                "id": "A-rc-wk-fam-ln-n",
+                "label": "No",
+                "auto_annotation": "The relation doesn't share same family last name"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-rc-wk-attrib-age",
+        "question_string": "How old are the shared attributes on the relation?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rc-wk-attrib-age-less",
+                "label": "less than 3 months",
+                "auto_annotation": "less than 3 months"
+              },
+              {
+                "id": "A-rc-wk-attrib-age-older",
+                "label": "3 months or older",
+                "auto_annotation": "3 months or older"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-strg-vc-rel-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-strg-vc-rel",
+        "question_string": "Is there any strong VC relation in RC?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-strg-vc-rel-y",
+                "label": "Yes",
+                "auto_annotation": "Strong VC rel",
+                "followup_question_group_ids": [
+                  "Q-strg-vc-rel-y-fup"
+                ]
+              },
+              {
+                "id": "A-strg-vc-rel-n",
+                "label": "No",
+                "auto_annotation": "Not Strong VC rel",
+                "followup_question_group_ids": [
+                  "Q-strg-vc-rel-n-fup"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-cb-scn-vc-adv-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-cb-scn-vc-adv",
+        "question_string": "Do not close the account due to CB",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-cb-scn-vc-adv",
+                "label": "Ok",
+                "auto_annotation": "Ok"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-action-rq-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-action-rq",
+        "question_string": "Reason for requeue?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-bnk-cll",
+                "label": "Bank Call",
+                "auto_annotation": "Bank Call"
+              },
+              {
+                "id": "A-cust-cll",
+                "label": "Customer call",
+                "auto_annotation": "Customer call"
+              },
+              {
+                "id": "A-lang-depncy",
+                "label": "Language dependency",
+                "auto_annotation": "Language dependency"
+              },
+              {
+                "id": "A-tool-issue",
+                "label": "Tool issue",
+                "auto_annotation": "Tool issue"
+              },
+              {
+                "id": "A-requeue-na",
+                "label": "Not applicable",
+                "auto_annotation": "Not applicable"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-rc-wk-pm-oldac-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-rc-strnrel",
+        "question_string": "Did you try making it a strong relation?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rc-strnrel-ip",
+                "label": "IP range/block trusted in weak relation",
+                "auto_annotation": "IP range/block trusted in weak relation"
+              },
+              {
+                "id": "A-rc-strnrel-iv",
+                "label": "IV relation found between CUI and weak relation",
+                "auto_annotation": "IV relation found between CUI and weak relation"
+              },
+              {
+                "id": "A-rc-strnrel-op",
+                "label": "CUI Ordering pattern match with weak relation",
+                "auto_annotation": "CUI Ordering pattern match with weak relation"
+              },
+              {
+                "id": "A-rc-strnrel-n",
+                "label": "Not a strong relation",
+                "auto_annotation": "Not a strong relation",
+                "followup_question_group_ids": [
+                  "Q-rc-strnrel-n-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-pric-error-y-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-sell-stat",
+        "question_string": "What is the status of the seller account?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-sell-stat-frd",
+                "label": "Fraud",
+                "auto_annotation": "Seller Account in Fraud status",
+                "followup_question_group_ids": [
+                  "Q-sell-stat-FUP"
+                ]
+              },
+              {
+                "id": "A-sell-stat-vcac",
+                "label": "Account compromised",
+                "auto_annotation": "Seller Account compromised",
+                "followup_question_group_ids": [
+                  "Q-sell-stat-FUP"
+                ]
+              },
+              {
+                "id": "A-sell-stat-norm",
+                "label": "Normal",
+                "auto_annotation": "Seller Account in Normal status"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-reins-corr-n-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-incorr-reins",
+        "question_string": "Why was it incorrect?",
+        "responses": [
+          {
+            "checkbox_options": [
+              {
+                "id": "A-incorr-reins-mo",
+                "label": "Missed Fraud MO",
+                "auto_annotation": "Incorrect Reinstate Reason - Missed Fraud MO"
+              },
+              {
+                "id": "A-incorr-reins-ato",
+                "label": "Missed ATO",
+                "auto_annotation": "Incorrect Reinstate Reason - Missed ATO"
+              },
+              {
+                "id": "A-incorr-reins-gsi",
+                "label": "Missed fraud rels in GSI",
+                "auto_annotation": "Incorrect Reinstate Reason - Missed fraud rels in GSI"
+              },
+              {
+                "id": "A-incorr-reins-pmt",
+                "label": "Missed Payment Validation",
+                "auto_annotation": "Incorrect Reinstate Reason  -Missed Payment Validation"
+              },
+              {
+                "id": "A-incorr-reins-cb-bd",
+                "label": "CB/BD above Thresold",
+                "auto_annotation": "Incorrect Reinstate Reason  - CB/BD above Thresold"
+              },
+              {
+                "id": "A-incorr-reins-rc",
+                "label": "Misinterpreted RC Relations",
+                "auto_annotation": "Incorrect Reinstate Reason  - Misinterpreted RC Relations"
+              },
+              {
+                "id": "A-incorr-reins-iv",
+                "label": "Misinterpreted IV relations",
+                "auto_annotation": "Incorrect Reinstate Reason  - Misinterpreted IV relations"
+              },
+              {
+                "id": "A-incorr-reins-vel",
+                "label": "Missed Order Velocity",
+                "auto_annotation": "Incorrect Reinstate Reason  -  Missed Order Velocity"
+              },
+              {
+                "id": "A-incorr-reins-ord",
+                "label": "Missed Ordering Pattern",
+                "auto_annotation": "Incorrect Reinstate Reason  - Missed Ordering Pattern"
+              }
+            ],
+            "min_selected": 1,
+            "max_selected": 999
+          }
+        ]
+      }
+    ]
+  },
+  "Q-sell-stat-n-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-sell-stat-jump-n",
+        "question_string": "Take a cancel action and send cancel_bad_seller_listing blurb",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-sell-stat-jump-n",
+                "label": "Ok",
+                "auto_annotation": "cancel action and sending cancel_bad_seller_listing blurb",
+                "next_node_override": "node-man-anno"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-pmts": {
+    "workflow_questions": [
+      {
+        "id": "Q-cbw",
+        "question_string": "Is there CB on self account or strongly related account?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-cbw-yes",
+                "label": "Yes",
+                "auto_annotation": "CBW",
+                "followup_question_group_ids": [
+                  "Q-cb-more-less-sop-FUP"
+                ]
+              },
+              {
+                "id": "A-cbe-no",
+                "label": "No",
+                "auto_annotation": "No CBW"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-rc-rel-weak-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-rc-wk",
+        "question_string": "What kind of impactful relation is it?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rc-wk-pm",
+                "label": "Weak relation by payment",
+                "auto_annotation": "Weak relation by payment",
+                "followup_question_group_ids": [
+                  "Q-rc-wk-pm-FUP"
+                ]
+              },
+              {
+                "id": "A-rc-wk-frd",
+                "label": "Weak fraud relations",
+                "auto_annotation": "Weak fraud relations",
+                "followup_question_group_ids": [
+                  "Q-rc-wk-frd-FUP"
+                ]
+              },
+              {
+                "id": "A-rc-wk-oth",
+                "label": "Weak relations by other attributes",
+                "auto_annotation": "Weak relations by other attributes",
+                "followup_question_group_ids": [
+                  "Q-rc-wk-oth-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-em-corr-dnc-ach-moa-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-em-moa-ver-ivrc",
+        "question_string": "Is the email/MOA validated by IV/RC?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-em-moa-ver-ivrc-iv",
+                "label": "Email/MOA verfied by IV",
+                "auto_annotation": "Email/MOA verfied by IV",
+                "followup_question_group_ids": [
+                  "Q-em-moa-ver-ivrc-iv-FUP"
+                ]
+              },
+              {
+                "id": "A-em-moa-ver-ivrc-rc",
+                "label": "Email/MOA verified by RC",
+                "auto_annotation": "Email/MOA verified by RC",
+                "followup_question_group_ids": [
+                  "Q-em-moa-ver-ivrc-iv-FUP"
+                ]
+              },
+              {
+                "id": "A-em-moa-ver-ivrc-na",
+                "label": "Not verified",
+                "auto_annotation": "Email Not verified"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-call-rgt-prsn-wrg-num-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-call-rgt-prsn-wrg-num-act",
+        "question_string": "Please Hold the account",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-call-rgt-prsn-wrg-num-act-yes",
+                "label": "OK",
+                "next_node_override": "node-add-obs"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-uv-call-rgt-prsn-yes-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-uv-full-nme",
+        "question_string": "Confirm full name on the account?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-uv-full-nme-ok",
+                "label": "OK",
+                "auto_annotation": "nameOK"
+              },
+              {
+                "id": "A-uv-full-nme-fail",
+                "label": "Fail",
+                "auto_annotation": "nameX"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-uv-ord-lst-wk",
+        "question_string": "Confirm # order placed in last 7 days?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-uv-ord-lst-wk-ok",
+                "label": "OK",
+                "auto_annotation": "ordersOK"
+              },
+              {
+                "id": "A-uv-ord-lst-wk-fail",
+                "label": "Fail",
+                "auto_annotation": "ordersX"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-uv-rcnt-itm",
+        "question_string": "Can you confirm an item from your most recent order?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-uv-rct-itm-ok",
+                "label": "OK",
+                "auto_annotation": "itemOK"
+              },
+              {
+                "id": "A-uv-rct-itm-fail",
+                "label": "Fail",
+                "auto_annotation": "itemX"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-uv-rcnt-itm-cc",
+        "question_string": "Can you confirm the last 2 digits of CC used for this order?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-uv-rct-itm-cc-ok",
+                "label": "OK",
+                "auto_annotation": "last2OK"
+              },
+              {
+                "id": "A-uv-rct-itm-cc-fail",
+                "label": "Fail",
+                "auto_annotation": "last2X"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-uv-rcnt-itm-cc-use",
+        "question_string": "Have you used this CC in other Amazon account?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-uv-rct-itm-cc-use-ok",
+                "label": "OK",
+                "auto_annotation": "ccuseOK"
+              },
+              {
+                "id": "A-uv-rct-itm-cc-use-fail",
+                "label": "Fail",
+                "auto_annotation": "ccuseX"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-uv-set1-chk",
+        "question_string": "Questions answered incorrectly",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-uv-set1-chk-one",
+                "label": "One",
+                "auto_annotation": "2nd set of questions",
+                "followup_question_group_ids": [
+                  "Q-uv-frst-set-FUP"
+                ]
+              },
+              {
+                "id": "A-uv-set1-chk-2-mre",
+                "label": "2 or more",
+                "auto_annotation": "2 or more - Fraud the account",
+                "followup_question_group_ids": [
+                  "Q-uv-set1-chk-2-mre-FUP"
+                ]
+              },
+              {
+                "id": "A-uv-set1-chk-none",
+                "label": "None",
+                "auto_annotation": "None- PASS the orders",
+                "followup_question_group_ids": [
+                  "Q-uv-set1-chk-none-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-sa-ver-rc-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-sa-ver-rc-cid",
+        "question_string": "Provide RC CID",
+        "responses": [
+          {
+            "id": "A-sa-ver-rc-cid",
+            "max_length": 15
+          }
+        ]
+      }
+    ]
+  },
+  "Q-pay-ver-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-pay-ver",
+        "question_string": "Is the payment Justified/Validated?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-pmt-ver-IV",
+                "label": "Valid through IV",
+                "auto_annotation": "Valid through IV",
+                "followup_question_group_ids": [
+                  "Q-pay-ver-iv-fup"
+                ]
+              },
+              {
+                "id": "A-pmt-ver-old",
+                "label": "Old payment pattern/Old bank issuer",
+                "auto_annotation": "Old payment pattern/Old bank issuer"
+              },
+              {
+                "id": "A-pmt-ver-oth",
+                "label": "Other",
+                "auto_annotation": "Other"
+              },
+              {
+                "id": "A-pmt-not-ver",
+                "label": "Payment not validated (bank call is required)",
+                "auto_annotation": "Payment not validated (bank call is required)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-pmt-vel-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-pmt-vel-act",
+        "question_string": "Are you ready to hold the account?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-pmt-vel-act-yes",
+                "label": "Yes",
+                "auto_annotation": "Pmt-vel-Jump",
+                "next_node_override": "node-man-anno"
+              },
+              {
+                "id": "A-pmt-vel-act-no",
+                "label": "No"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-rc-supprd-rels-yes-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-rc-pttrn-sprssd-acc",
+        "question_string": "What is the pattern seen on the suppressed account?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-rc-pttrn-sprssd-acc-vc-gd",
+                "label": "VC with good signings",
+                "auto_annotation": "VC with good signings"
+              },
+              {
+                "id": "A-rc-pttrn-sprssd-acc-nc-gd",
+                "label": "NC with good signings",
+                "auto_annotation": "NC with good signings"
+              },
+              {
+                "id": "A-rc-pttrn-sprssd-acc-s-frd",
+                "label": "Fraud acc in S state",
+                "auto_annotation": "Fraud acc in S state"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-sa-age-new-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-sa-readd",
+        "question_string": "Check if the address is old and readded?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-sa-readd-y",
+                "label": "Re-added Address",
+                "auto_annotation": "Re-added Address"
+              },
+              {
+                "id": "A-sa-readd-n",
+                "label": "Not a re-added address",
+                "auto_annotation": "Not a re-added address",
+                "followup_question_group_ids": [
+                  "Q-sa-readd-n-fup"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-sa-type-lkr-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-sa-lkr-pat",
+        "question_string": "Does the customer has pattern of adding Pack Station/DHL/Hermes/Amazon Locker address?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-sa-lkr-pat-yes",
+                "label": "Yes",
+                "auto_annotation": "Yes"
+              },
+              {
+                "id": "A-sa-lkr-pat-no",
+                "label": "No",
+                "auto_annotation": "No"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-sa-lkr-cls",
+        "question_string": "Is the Pack Station/DHL/Hermes/Amazon Locker address to close to previous old address?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-sa-lkr-cls-yes",
+                "label": "Yes",
+                "auto_annotation": "Locker is close to old address"
+              },
+              {
+                "id": "A-sa-lkr-cls-no",
+                "label": "No",
+                "auto_annotation": "Locker is not close to old address"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-cb-more-less-sop-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-cb-scn",
+        "question_string": "Which of the following scenarios do you see on the account?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-cb-scn-unrslvd",
+                "label": "Unresolved CB in CUI",
+                "auto_annotation": "Unresolved CB in CUI"
+              },
+              {
+                "id": "A-cb-scn-nc-rel",
+                "label": "Strong NC rel with CB",
+                "auto_annotation": "Strong NC rel with CB"
+              },
+              {
+                "id": "A-cb-scn-vc-rel-more",
+                "label": "Strong VC rel with CB >250 EUR/$300",
+                "auto_annotation": "Strong VC rel with CB >250 EUR/$300",
+                "followup_question_group_ids": [
+                  "Q-cb-scn-vc-adv-fup"
+                ]
+              },
+              {
+                "id": "A-cb-scn-vc-rel-less",
+                "label": "Strong VC rel with CB >250 EUR/$300 but good OH or CB related to ATO or Prime/subscriptions",
+                "auto_annotation": "Strong VC rel with CB >250 EUR/$300 but good OH or CB related to ATO or Prime/subscriptions",
+                "followup_question_group_ids": [
+                  "Q-cb-scn-vc-adv-fup"
+                ]
+              },
+              {
+                "id": "A-cb-scn-pending",
+                "label": "CB in pending status (New-Invg, Recd, Res wait,etc)",
+                "auto_annotation": "CB in pending status (New-Invg, Recd, Res wait,etc)"
+              },
+              {
+                "id": "A-cb-scn-none",
+                "label": "None",
+                "auto_annotation": "None"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-action-cxl-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-cxl-tag",
+        "question_string": "What is the Cancel tag?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-cxl-tag-echeck-sop",
+                "label": "Echeck SOP",
+                "auto_annotation": "Echeck SOP"
+              },
+              {
+                "id": "A-cxl-tag-inv-cc",
+                "label": "Invalid CC",
+                "auto_annotation": "Invalid CC"
+              },
+              {
+                "id": "A-cxl-tag-lkd-cc",
+                "label": "Leaked CC",
+                "auto_annotation": "Leaked CC"
+              },
+              {
+                "id": "A-cxl-tag-cxl-cui-req",
+                "label": "Customer requesting to cancel order",
+                "auto_annotation": "Customer requesting to cancel order"
+              },
+              {
+                "id": "A-cxl-tag-cb-sop",
+                "label": "CB SOP",
+                "auto_annotation": "CB SOP"
+              },
+              {
+                "id": "A-cxl-tag-recent-sani",
+                "label": "Recent Sanitization, order in suppressed status",
+                "auto_annotation": "Recent Sanitization, order in suppressed status"
+              },
+              {
+                "id": "A-cxl-tag-gc-sc-bad",
+                "label": "GC from bad source",
+                "auto_annotation": "GC from bad source"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-pos-avs-fup": {
+    "workflow_questions": [
+      {
+        "id": "Q-ba",
+        "question_string": "Is the BA new?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-ba-new",
+                "label": "New BA",
+                "auto_annotation": "New BA",
+                "followup_question_group_ids": [
+                  "Q-ba-new-fup"
+                ]
+              },
+              {
+                "id": "A-ba-old",
+                "label": "Old BA",
+                "auto_annotation": "Old BA"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-add-anno-cs-em-ctc-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-add-anno-cs-em-ctc",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-Cust-auth",
+                "label": "Cust auth",
+                "auto_annotation": "Cust auth"
+              },
+              {
+                "id": "A-Cust-unauth",
+                "label": "Cust unauth",
+                "auto_annotation": "Cust unauth"
+              },
+              {
+                "id": "A-Cust-cxl-ord",
+                "label": "Cust auth but asked to cancel",
+                "auto_annotation": "Cust auth but asked to cancel"
+              },
+              {
+                "id": "A-Rplc-req-SES",
+                "label": "Replacement request/SES",
+                "auto_annotation": "Replacement request/SES"
+              },
+              {
+                "id": "A-Others-cs-em",
+                "label": "Others",
+                "auto_annotation": "Others",
+                "followup_question_group_ids": [
+                  "Q-Others-cs-em-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-action-frd-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-frd-tag",
+        "question_string": "What is the Fraud tag?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-frd-tag-rfo",
+                "label": "RFO",
+                "auto_annotation": "RFO"
+              },
+              {
+                "id": "A-frd-tag-slpr",
+                "label": "Sleeper MO",
+                "auto_annotation": "Sleeper MO"
+              },
+              {
+                "id": "A-frd-tag-it",
+                "label": "ID Theft MO",
+                "auto_annotation": "ID Theft MO"
+              },
+              {
+                "id": "A-frd-tag-lkd",
+                "label": "Leaked CC",
+                "auto_annotation": "Leaked CC"
+              },
+              {
+                "id": "A-frd-tag-unauth",
+                "label": "CCH Unauth Order",
+                "auto_annotation": "CCH Unauth Order"
+              },
+              {
+                "id": "A-frd-tag-bd-gc-sc",
+                "label": "Bad GC Source",
+                "auto_annotation": "Bad GC Source"
+              },
+              {
+                "id": "A-frd-tag-other",
+                "label": "Other",
+                "auto_annotation": "Other",
+                "followup_question_group_ids": [
+                  "Q-frd-tag-other-FUP"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-gsi-rels-sim-ptrn-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-gsi-resl-sim-ptrn-h-f",
+        "question_string": "Was the related account correctly held/frauded?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-gsi-rels-sim-ptrn-yes",
+                "label": "Yes",
+                "auto_annotation": "Action on f/h rel was correct"
+              },
+              {
+                "id": "A-gsi-rels-sim-ptrn-no",
+                "label": "No",
+                "auto_annotation": "Action on f/h rel was incorrect"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Q-gsi-rels-sim-ptrn-legit-MO",
+        "question_string": "Check for the following legit Mos",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-gsi-resl-sim-ptrn-corp",
+                "label": "Corporate MO",
+                "auto_annotation": "Corporate MO"
+              },
+              {
+                "id": "A-gsi-rels-sim-ptrn-rs",
+                "label": "Reseller MO",
+                "auto_annotation": "Reseller MO"
+              },
+              {
+                "id": "A-gsi-rels-sim-ptrn-edu",
+                "label": "Educational MO",
+                "auto_annotation": "Educational MO"
+              },
+              {
+                "id": "A-gsi-rels-sim-ptrn-other",
+                "label": "Others",
+                "auto_annotation": "Others",
+                "followup_question_group_ids": [
+                  "Q-gsi-rels-sim-ptrn-other-FUP"
+                ]
+              },
+              {
+                "id": "A-gsi-rels-sim-ptrn-none",
+                "label": "None",
+                "auto_annotation": "None"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-action-hold-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-hold-tag",
+        "question_string": "What is the Hold tag?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-hold-tag-bwv",
+                "label": "Bank wont verify",
+                "auto_annotation": "Bank wont verify"
+              },
+              {
+                "id": "A-hold-tag-no-match",
+                "label": "Billing info doesn’t match with bank",
+                "auto_annotation": "Billing info doesn’t match with bank"
+              },
+              {
+                "id": "A-hold-tag-frd-nc-legit-gc",
+                "label": "Suspect Fraud NC using legit GC",
+                "auto_annotation": "Suspect Fraud NC using legit GC"
+              },
+              {
+                "id": "A-hold-tag-frd-intl-cui",
+                "label": "International customer SOP",
+                "auto_annotation": "International customer SOP"
+              },
+              {
+                "id": "A-hold-tag-CB-sop",
+                "label": "Chargeback SOP",
+                "auto_annotation": "Chargeback SOP"
+              },
+              {
+                "id": "A-hold-tag-echeck-sop",
+                "label": "Echeck SOP",
+                "auto_annotation": "Echeck SOP"
+              },
+              {
+                "id": "A-hold-tag-vm-sop",
+                "label": "Voicemail SOP",
+                "auto_annotation": "Voicemail SOP"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-uv-set2-chk-1-mre-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-uv-set2-chk-1-mre-act",
+        "question_string": "Please FRAUD the account",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-uv-set2-chk-1-mre-act",
+                "label": "OK",
+                "auto_annotation": "OK",
+                "next_node_override": "node-summary"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Q-action-san-FUP": {
+    "workflow_questions": [
+      {
+        "id": "Q-san-tag",
+        "question_string": "What is the Sanitize tag?",
+        "responses": [
+          {
+            "radio_options": [
+              {
+                "id": "A-san-tag-unauth",
+                "label": "Customer unauthorized charges",
+                "auto_annotation": "Customer unauthorized charges"
+              },
+              {
+                "id": "A-san-tag-spoofing",
+                "label": "Spoofing",
+                "auto_annotation": "Spoofing"
+              },
+              {
+                "id": "A-san-tag-fam-frd",
+                "label": "Family Fraud",
+                "auto_annotation": "Family Fraud"
+              },
+              {
+                "id": "A-san-tag-ato",
+                "label": "Account takeover",
+                "auto_annotation": "Account takeover"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+> Output the clean code that is currently being used by the flow excluding the all
+additional code that is not being used.
+
+> Print all the answers using the JUMP on the flow
+
+> Print if all the jumps are calling the section that are present on the Sections JSON

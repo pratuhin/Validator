@@ -1,0 +1,90 @@
+{
+  "node-summary": {
+    "widgets_visible": [
+      "triton-jupiter-customer-data",
+      "triton-jupiter-customer-data-shadow",
+      "triton-customer-data",
+      "triton-recent-annotation",
+      "triton-annotation-shadow",
+      "triton-annotation",
+      "triton-jupiter-order-data",
+      "triton-jupiter-order-data-shadow",
+      "triton-order-data",
+      "triton-jupiter-customer-credit-cards",
+      "triton-jupiter-customer-credit-cards-shadow",
+      "triton-payment-methods",
+      "triton-addresses",
+      "triton-addresses-shadow",
+      "triton-addressesv2",
+      "triton-jupiter-customer-signins",
+      "triton-jupiter-customer-signins-shadow",
+      "triton-interesting-signins",
+      "triton-interesting-signins-shadow",
+      "triton-jupiter-related-customers",
+      "triton-jupiter-related-customers-shadow",
+      "triton-related-customers"
+    ]
+  },
+  "node-add-annotations": {
+    "section_name": "Additional Annotations",
+    "workflow_question_group_ids": [
+      "Q-reviewed"
+    ],
+    "widgets_visible": [
+      "triton-jupiter-customer-data",
+      "triton-jupiter-customer-data-shadow",
+      "triton-customer-data",
+      "triton-recent-annotation",
+      "triton-annotation-shadow",
+      "triton-annotation",
+      "triton-jupiter-order-data",
+      "triton-jupiter-order-data-shadow",
+      "triton-order-data",
+      "triton-jupiter-customer-credit-cards",
+      "triton-jupiter-customer-credit-cards-shadow",
+      "triton-payment-methods",
+      "triton-addresses",
+      "triton-addresses-shadow",
+      "triton-addressesv2",
+      "triton-jupiter-customer-signins",
+      "triton-jupiter-customer-signins-shadow",
+      "triton-interesting-signins",
+      "triton-interesting-signins-shadow",
+      "triton-jupiter-related-customers",
+      "triton-jupiter-related-customers-shadow",
+      "triton-related-customers"
+    ],
+    "next_workflow_node": "node-summary"
+  },
+  "node-investigation": {
+    "section_name": "Physical Stores Investigation - VC",
+    "workflow_question_group_ids": [
+      "Q-basic-cus"
+    ],
+    "widgets_visible": [
+      "triton-jupiter-customer-data",
+      "triton-jupiter-customer-data-shadow",
+      "triton-customer-data",
+      "triton-recent-annotation",
+      "triton-annotation-shadow",
+      "triton-annotation",
+      "triton-jupiter-order-data",
+      "triton-jupiter-order-data-shadow",
+      "triton-order-data",
+      "triton-jupiter-customer-credit-cards",
+      "triton-jupiter-customer-credit-cards-shadow",
+      "triton-payment-methods",
+      "triton-addresses",
+      "triton-addresses-shadow",
+      "triton-addressesv2",
+      "triton-jupiter-customer-signins",
+      "triton-jupiter-customer-signins-shadow",
+      "triton-interesting-signins",
+      "triton-interesting-signins-shadow",
+      "triton-jupiter-related-customers",
+      "triton-jupiter-related-customers-shadow",
+      "triton-related-customers"
+    ],
+    "next_workflow_node": "node-add-annotations"
+  }
+}
